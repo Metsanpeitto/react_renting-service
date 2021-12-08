@@ -5,6 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import React, { useEffect, useState } from 'react';
 import MyReservations from "./pages/MyReservations";
+import NewReservation from "./pages/NewReservation";
 
 import './App.css';
 
@@ -57,6 +58,7 @@ function App() {
       {mobileView || <NavPanel />}
       <Routes>
         <Route path="/my_reservations" element={<MyReservations />} />
+        <Route path="/new_reservation/:itemId" element={<NewReservation />} />
       </Routes>
     </div>
   );
