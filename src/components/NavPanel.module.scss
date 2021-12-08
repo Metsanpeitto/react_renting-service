@@ -1,0 +1,53 @@
+@import '../app/scss/flex';
+@import '../app/scss/utilities';
+
+img {
+  width: 100px;
+  height: auto;
+}
+
+.sidebar {
+  @extend %flex-col;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+
+  .header {
+    @extend %flex-col;
+    @extend %align-center;
+    height: 20vh;
+  }
+}
+
+nav {
+  @extend %flex-col;
+  @extend %mb-auto;
+
+  a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+  }
+
+  
+}
+
+.footer {
+  @extend %flex-col;
+  gap: 10px;
+
+  .social {
+    @extend %flex-row;
+
+    img {
+      width: 25px;
+      height: auto;
+    }
+  }
+}
+
+@media (min-width: 768px) { 
+  .sidebar {
+    width: 20vw;
+  }
+ }
