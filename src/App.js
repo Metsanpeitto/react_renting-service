@@ -1,12 +1,12 @@
 /* eslint-disable */
-
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
 import NavPanel from "./components/NavPanel";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import React, { useEffect, useState } from 'react';
+import MyReservations from "./pages/MyReservations";
 
+import './App.css';
 
 function App() {
 
@@ -33,7 +33,7 @@ function App() {
     };
 
     window.addEventListener('resize', handleResize);
-    
+
     return () => {
       window.removeEventListener('resize', handleResize)
     };
@@ -44,18 +44,20 @@ function App() {
   return (
     <div className="App">
 
-      {mobileMenuOpen || <MenuIcon className="mobile menu open" onClick={() => toggleMenu()}/> }
-    
-      { mobileMenuOpen && (
-          <>
-            <CloseIcon className="mobile menu close" onClick={() => toggleMenu()} />
-            <NavPanel />
-          </> 
-        )
+      {mobileMenuOpen || <MenuIcon className="mobile menu open" onClick={() => toggleMenu()} />}
+
+      {mobileMenuOpen && (
+        <>
+          <CloseIcon className="mobile menu close" onClick={() => toggleMenu()} />
+          <NavPanel />
+        </>
+      )
       }
 
-      { mobileView || <NavPanel />}
-
+      {mobileView || <NavPanel />}
+      <Routes>
+        <Route path="/my_reservations" element={<MyReservations />} />
+      </Routes>
     </div>
   );
 }
