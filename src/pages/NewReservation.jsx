@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import DateTimePicker from 'react-datetime-picker'
 import { useParams } from "react-router-dom";
 import Select from 'react-select'
-//import { addReservation } from '../redux/api/api';
+import { addReservation } from '../redux/api/api';
 import { useNavigate } from "react-router-dom";
 
 
@@ -26,7 +26,7 @@ function NewReservation() {
       city,
       value
     };
-    //dispatch(addReservation(newReservation));
+    dispatch(addReservation(newReservation));
   };
 
   useEffect(() => {

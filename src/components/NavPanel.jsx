@@ -16,7 +16,7 @@ const NavPanel = () => {
         <NavLink
           key="items"
           to={`${process.env.PUBLIC_URL}/`}
-          activeClassName="active"
+          activeclassname="active"
         >
           ITEMS
         </NavLink>
@@ -24,35 +24,35 @@ const NavPanel = () => {
           key="new_item"
           to={`${process.env.PUBLIC_URL}/new_item`}
           active="true"
-          className="nav-link"
+          activeclassname="nav-link"
         >
           NEW ITEM
         </Link>
         <NavLink
           key="reserve"
           to={`${process.env.PUBLIC_URL}/new_reserve`}
-          activeClassName="active"
+          activeclassname="active"
         >
           NEW RESERVE
         </NavLink>
         <NavLink
           key="reservations"
           to={`${process.env.PUBLIC_URL}/my_reservation`}
-          activeClassName="active"
+          activeclassname="active"
         >
           MY RESERVATIONS
         </NavLink>
         <NavLink
           key="add"
           to={`${process.env.PUBLIC_URL}/add`}
-          activeClassName="active"
+          activeclassname="active"
         >
           ADD ITEM
         </NavLink>
         <NavLink
           key="delete"
           to={`${process.env.PUBLIC_URL}/delete`}
-          activeClassName="active"
+          activeclassname="active"
         >
           DELETE ITEM
         </NavLink>

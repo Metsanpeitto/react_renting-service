@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-//import { getReservations } from '../redux/api/api';
+import { getReservations } from '../redux/api/api';
 import { useNavigate } from "react-router-dom";
 
 const MyReservations = () => {
@@ -15,7 +15,7 @@ const MyReservations = () => {
         console.log("Hi");
         if (!calledReservations && reservations.length === 0) {
             setCalledReservations(true);
-            //dispatch(getReservations());
+            dispatch(getReservations());
         }
     });
 
