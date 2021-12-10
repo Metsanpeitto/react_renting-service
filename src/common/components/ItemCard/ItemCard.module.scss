@@ -4,7 +4,7 @@
   @extend %flex-col;
   @extend %align-center;
   // @extend %justify-center;
-  width: 100vw;
+  // width: 100vw;
   // height: 100vh;
   // padding: 10px;
 
@@ -20,6 +20,6 @@
 
 @media (min-width: 768px) { 
   .item-card {
-    width: 20vw;
+    // width: 20vw;
   }
 }
