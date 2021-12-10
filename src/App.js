@@ -1,11 +1,13 @@
 /* eslint-disable */
 
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import NavPanel from "./components/NavPanel";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { Routes ,Route } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
+import Main from './features/main/Main'
 
 
 function App() {
@@ -16,6 +18,11 @@ function App() {
   function toggleMenu() {
     setMobileMenuOpen(!mobileMenuOpen);
   }
+
+  function hideMenu() {
+    setMobileMenuOpen(false);
+    console.log('hide');
+  };
 
   useEffect(() => {
     setMobileView(window.innerWidth < 769)
@@ -44,17 +51,37 @@ function App() {
   return (
     <div className="App">
 
-      {mobileMenuOpen || <MenuIcon className="mobile menu open" onClick={() => toggleMenu()}/> }
+      {mobileMenuOpen || mobileView && (
+          <>
+            <MenuIcon className="mobile menu open" onClick={() => toggleMenu()}/>
+
+            <Routes>
+              <Route exact path="/" element={<Main />} />
+            </Routes>
+          </>
+        )
+      }
     
       { mobileMenuOpen && (
           <>
             <CloseIcon className="mobile menu close" onClick={() => toggleMenu()} />
-            <NavPanel />
+            <NavPanel onNavClick={() => hideMenu()} />
           </> 
         )
       }
 
-      { mobileView || <NavPanel />}
+      { mobileView || (
+          <>
+            <NavPanel />
+
+            <Routes>
+              <Route exact path="/" element={<Main />} />
+            </Routes>
+          </>
+        )
+      }
+
+     
 
     </div>
   );

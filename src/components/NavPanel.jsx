@@ -4,7 +4,12 @@ import { NavLink, Link } from 'react-router-dom';
 import styles from './NavPanel.module.scss';
 
 
-const NavPanel = () => {
+const NavPanel = (props) => {
+
+    const handleClick = () => {
+      props.onNavClick();
+    };
+
     return (
       <div className={styles.sidebar}>
 
@@ -17,6 +22,7 @@ const NavPanel = () => {
               key="items"
               to={`${process.env.PUBLIC_URL}/`}
               activeClassName="active"
+              onClick={() => handleClick()}
           >
               ITEMS
           </NavLink>
@@ -24,6 +30,7 @@ const NavPanel = () => {
               key="reserve"
               to={`${process.env.PUBLIC_URL}/reserve`}
               activeClassName="active"
+              onClick={() => handleClick()}
           >
               RESERVE
           </NavLink>
@@ -31,6 +38,7 @@ const NavPanel = () => {
               key="reservations"
               to={`${process.env.PUBLIC_URL}/reservations`}
               activeClassName="active"
+              onClick={() => handleClick()}
           >
               MY RESERVATIONS
           </NavLink>
@@ -38,6 +46,7 @@ const NavPanel = () => {
               key="add"
               to={`${process.env.PUBLIC_URL}/add`}
               activeClassName="active"
+              onClick={() => handleClick()}
           >
               ADD ITEM
           </NavLink>
@@ -45,6 +54,7 @@ const NavPanel = () => {
               key="delete"
               to={`${process.env.PUBLIC_URL}/delete`}
               activeClassName="active"
+              onClick={() => handleClick()}
           >
               DELETE ITEM
           </NavLink>

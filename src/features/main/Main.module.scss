@@ -1,0 +1,16 @@
+@import '../../app/scss/flex';
+
+.main {
+  @extend %flex-col;
+  @extend %align-center;
+  @extend %justify-center;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+}
+
+@media (min-width: 768px) { 
+  .main {
+    width: 80vw;
+  }
+}
