@@ -1,0 +1,25 @@
+@import '../../../app/scss/flex';
+
+.item-card {
+  @extend %flex-col;
+  @extend %align-center;
+  // @extend %justify-center;
+  width: 100vw;
+  // height: 100vh;
+  // padding: 10px;
+
+  .social {
+    @extend %flex-row;
+
+    img {
+      width: 25px;
+      height: auto;
+    }
+  }
+}
+
+@media (min-width: 768px) { 
+  .item-card {
+    width: 20vw;
+  }
+}

@@ -5,8 +5,13 @@
   @extend %align-center;
   @extend %justify-center;
   width: 100vw;
-  height: 100vh;
-  padding: 10px;
+  padding: 50px 10px;
+
+  .carousel {
+    @extend %flex-row;
+    @extend %justify-center;
+    flex-wrap: wrap;
+  }
 }
 
 @media (min-width: 768px) { 

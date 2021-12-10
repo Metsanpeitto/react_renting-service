@@ -2,7 +2,7 @@
 
 import logo from './logo.svg';
 import './App.scss';
-import NavPanel from "./components/NavPanel";
+import NavPanel from "./common/components/NavPanel/NavPanel";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Routes ,Route } from 'react-router-dom';
@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
 
     const handleResize = () => {
-      if (window.innerWidth > 769) {
+      if (window.innerWidth > 768) {
         setMobileMenuOpen(false);
         setMobileView(false);
       } else if (window.innerWidth < 769) {
