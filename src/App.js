@@ -7,7 +7,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Routes ,Route } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-import Main from './features/main/Main'
+import Main from './features/main/Main';
+import NewItem from './features/newitem/NewItem';
 
 
 function App() {
@@ -76,6 +77,7 @@ function App() {
 
             <Routes>
               <Route exact path="/" element={<Main />} />
+              <Route path="/new_item" element={<NewItem />} />
             </Routes>
           </>
         )

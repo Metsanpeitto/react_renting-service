@@ -44,7 +44,7 @@ const NavPanel = (props) => {
           </NavLink>
           <NavLink
               key="add"
-              to={`${process.env.PUBLIC_URL}/add`}
+              to={`${process.env.PUBLIC_URL}/new_item`}
               activeClassName="active"
               onClick={() => handleClick()}
           >
