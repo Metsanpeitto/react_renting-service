@@ -58,6 +58,7 @@ function App() {
 
             <Routes>
               <Route exact path="/" element={<Main />} />
+              <Route path="/new_item" element={<NewItem />} />
             </Routes>
           </>
         )

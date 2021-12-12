@@ -1,0 +1,14 @@
+@import '../../app/scss/flex';
+
+.container {
+  @extend %flex-col;
+  @extend %align-center;
+  @extend %justify-center;
+  padding: 50px;
+  height: 100vh;
+  gap: 30px;
+
+  p {
+    text-align: center;
+  }
+}
