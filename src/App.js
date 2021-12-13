@@ -19,6 +19,25 @@ function App() {
     setMobileView(window.innerWidth <= 768)
   }, []);
 
+  useEffect(() => {
+
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setMobileMenuOpen(false);
+        setMobileView(false);
+      } else if (window.innerWidth <= 768) {
+        setMobileView(true);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    };
+
+  }, []);
+
   return (
     <div className="App">
       
