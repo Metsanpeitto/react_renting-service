@@ -11,4 +11,25 @@ const getReservations = async () => await axios.get(`${url}`).then((result) => {
     return reservations;
 });
 
+
+
+const addReservation = async (reservation) => {
+    const token = localStorage.getItem("token");
+    const config = {
+        headers: {
+            Authorization: token
+        }
+    }
+    const body = {
+        user_id: reservation.userId,
+        city: reservation.city,
+        date: reservation.value,
+        item_id: reservation.itemId
+    };
+
+    const response = axios.post(`${url}`, body, config)
+        .then((result) => result.data);
+    return response;
+}
+
 export default { getReservations, addReservation };
