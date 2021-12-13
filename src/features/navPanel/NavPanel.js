@@ -58,7 +58,11 @@ const NavPanel = ({ onNavClick }) => {
 };
 
 NavPanel.propTypes = {
-  onNavClick: PropTypes.func.isRequired,
+  onNavClick: PropTypes.func,
+};
+
+NavPanel.defaultProps = {
+  onNavClick: () => {},
 };
 
 export default NavPanel;
