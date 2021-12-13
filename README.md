@@ -48,6 +48,7 @@ npm install
 npm start
 ```
 
+
 ### Verify linters
 
 
@@ -61,7 +62,6 @@ npx stylelint "**/*.{css,scss}"
 npx eslint . --fix
 npx stylelint "**/*.{css,scss}" --fix
 ```
-
 
 ## To run jest test
 ```cmd
