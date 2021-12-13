@@ -32,7 +32,7 @@ const NavPanel = ( )=> {
 
       <footer>
 
-        <div>
+        <div className={styles.social}>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
 
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
@@ -44,9 +44,9 @@ const NavPanel = ( )=> {
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
         </div>
 
-        <span>
+        <small>
           &copy; 2021 Abraham Rodriguez & Akasha Rojee
-        </span>
+        </small>
 
       </footer>
 

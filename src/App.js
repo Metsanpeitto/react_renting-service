@@ -1,7 +1,6 @@
 /* eslint-disable */
 
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import NavPanel from './features/navPanel/NavPanel';
 
 function App() {
