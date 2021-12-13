@@ -7,4 +7,3 @@ export const SIGN_UP = 'SIGN_UP';
 export const SIN_IN = 'SIN_IN';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const RESET_USER = 'RESET_USER';
-
