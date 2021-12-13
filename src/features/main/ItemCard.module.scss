@@ -1,0 +1,15 @@
+@import '../../app/scss/flex';
+
+.item-card {
+  @extend %flex-col;
+  @extend %align-center;
+
+  .social {
+    @extend %flex-row;
+
+    img {
+      width: 25px;
+      height: auto;
+    }
+  }
+}
