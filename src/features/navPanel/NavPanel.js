@@ -3,7 +3,11 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './NavPanel.module.scss';
 
-const NavPanel = ( )=> {
+const NavPanel = (props) => {
+
+  const handleClick = () => {
+    props.onNavClick();
+  };
 
   return (
     <div className={styles.container}>
@@ -13,19 +17,19 @@ const NavPanel = ( )=> {
       </header>
 
       <nav>
-        <NavLink to={`${process.env.PUBLIC_URL}/`}>
+        <NavLink to={`${process.env.PUBLIC_URL}/`} onClick={() => handleClick()}>
             ITEMS
         </NavLink>
-        <NavLink to={`${process.env.PUBLIC_URL}/reserve`}>
+        <NavLink to={`${process.env.PUBLIC_URL}/reserve`} onClick={() => handleClick()}>
             RESERVE ITEM
         </NavLink>
-        <NavLink to={`${process.env.PUBLIC_URL}/reservations`}>
+        <NavLink to={`${process.env.PUBLIC_URL}/reservations`} onClick={() => handleClick()}>
             MY RESERVATIONS
         </NavLink>
-        <NavLink to={`${process.env.PUBLIC_URL}/add`}>
+        <NavLink to={`${process.env.PUBLIC_URL}/add`} onClick={() => handleClick()}>
             ADD ITEM
         </NavLink>
-        <NavLink to={`${process.env.PUBLIC_URL}/delete`}>
+        <NavLink to={`${process.env.PUBLIC_URL}/delete`} onClick={() => handleClick()}>
             DELETE ITEM
         </NavLink>
       </nav>

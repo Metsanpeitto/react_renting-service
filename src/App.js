@@ -14,6 +14,10 @@ function App() {
   function toggleMenu() {
     setMobileMenuOpen(!mobileMenuOpen);
   }
+
+  function hideMenu() {
+    setMobileMenuOpen(false);
+  };
   
   useEffect(() => {
     setMobileView(window.innerWidth <= 768)
@@ -50,7 +54,7 @@ function App() {
       { mobileMenuOpen && (
         <>
           <CloseIcon className="menu close" onClick={() => toggleMenu()} />
-          <NavPanel />
+          <NavPanel onNavClick={() => hideMenu()} />
         </> 
       )}
 
