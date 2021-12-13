@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
 import NavPanel from './features/navPanel/NavPanel';
 import Main from './features/main/Main';
+import NewItem from './features/newItem/NewItem';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -48,6 +49,7 @@ function App() {
 
           <Routes>
             <Route exact path="/" element={<Main />} />
+            <Route path="/add" element={<NewItem />} />
           </Routes>
         </>
       ))}
@@ -65,6 +67,7 @@ function App() {
 
         <Routes>
           <Route exact path="/" element={<Main />} />
+          <Route path="/add" element={<NewItem />} />
         </Routes>
       </>
       )}
