@@ -1,11 +1,12 @@
 /* eslint-disable */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import styles from './NavPanel.module.scss';
 
 const NavPanel = ( )=> {
 
   return (
-    <div>
+    <div className={styles.container}>
 
       <header>
         <img src="https://1000logos.net/wp-content/uploads/2021/05/Google-logo.png" />

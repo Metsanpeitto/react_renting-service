@@ -1,0 +1,21 @@
+@import '../../app/scss/flex';
+
+.container {
+  @extend %flex-col;
+
+  header {
+    @extend %flex-col;
+  }
+
+  nav {
+    @extend %flex-col;  
+  }
+
+  footer {
+    @extend %flex-col;
+  
+    .social {
+      @extend %flex-row;
+    }
+  }
+}
