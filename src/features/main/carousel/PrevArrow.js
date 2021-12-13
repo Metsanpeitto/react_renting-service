@@ -18,12 +18,12 @@ export default PrevArrow;
 
 PrevArrow.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.string,
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   onClick: PropTypes.func,
 };
 
 PrevArrow.defaultProps = {
   className: '',
-  style: '',
+  style: {},
   onClick: () => {},
 };

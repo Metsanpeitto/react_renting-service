@@ -18,12 +18,12 @@ export default NextArrow;
 
 NextArrow.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.string,
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   onClick: PropTypes.func,
 };
 
 NextArrow.defaultProps = {
   className: '',
-  style: '',
+  style: {},
   onClick: () => {},
 };
