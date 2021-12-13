@@ -24,3 +24,21 @@ const signIn = async (user) => {
     return response
 }
 
+
+
+const signUp = async (user) => axios.post(`${url}/register`, {
+    user: {
+        name: user.name,
+        email: user.email,
+        password: user.password,
+        password_confirmation: user.passwordConfirmation
+    }
+})
+    .then((result) => {
+        Object.json = JSON.parse(result);
+        var user = Object.json;
+    });
+
+
+
+export default { signIn, signUp };
