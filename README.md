@@ -65,7 +65,6 @@ npx stylelint "**/*.{css,scss}" --fix
 ## To run jest test
 ```cmd
 npm run test
-npm run jest
 ```
 
 If you are non a technical person you can download the zip file.

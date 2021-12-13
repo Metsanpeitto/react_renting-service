@@ -1,7 +1,7 @@
 /* eslint-disable */
-//import reservations from '../../api/reservations';
-//import items from '../../api/items';
-//import users from '../../api/user';
+import reservations from '../../api/reservations';
+import items from '../../api/items';
+import users from '../../api/user';
 
 import { RECEIVE_RESERVATIONS, RECEIVE_ITEMS, DELETE_ITEM } from '../constants/action-types';
 
@@ -11,19 +11,19 @@ export const receiveReservations = (reservations) => ({
 });
 
 export const getReservations = () => (dispatch) => {
-    //reservations.getReservations().then((reservations) => {
-    //    //dispatch(receiveReservations(reservations));
-    //    return reservations;
-    //});
+    reservations.getReservations().then((reservations) => {
+        dispatch(receiveReservations(reservations));
+        return reservations;
+    });
 };
 
 export const addReservation = (reservation) => (dispatch) => {
-    //reservations.addReservation(reservation).then((response) => {
-    //    if (response === 'Created') {
-    //        //dispatch(getReservations());
-    //    }
-    //    return response;
-    //});
+    reservations.addReservation(reservation).then((response) => {
+        if (response === 'Created') {
+            dispatch(getReservations());
+        }
+        return response;
+    });
 };
 
 export const receiveItems = (items) => ({
@@ -32,26 +32,26 @@ export const receiveItems = (items) => ({
 });
 
 export const getItems = () => (dispatch) => {
-    //items.getItems().then((items) => {
-    //    //dispatch(receiveItems(items));
-    //    return items;
-    //});
+    items.getItems().then((items) => {
+        dispatch(receiveItems(items));
+        return items;
+    });
 };
 
 export const deleteItem = (itemId) => (dispatch) => {
-    //items.deleteItem(itemId).then((response) => {
-    //    //dispatch(getItems());
-    //    return response;
-    //});
+    items.deleteItem(itemId).then((response) => {
+        dispatch(getItems());
+        return response;
+    });
 };
 
 export const addItem = (item) => (dispatch) => {
-    //items.addItem(item).then((response) => {
-    //    if (response === 'Created') {
-    //        //dispatch(getItems());
-    //    }
-    //    return response;
-    //});
+    items.addItem(item).then((response) => {
+        if (response === 'Created') {
+            dispatch(getItems());
+        }
+        return response;
+    });
 };
 
 export const receiveUser = (user) => ({
