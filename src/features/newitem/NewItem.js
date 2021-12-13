@@ -6,7 +6,6 @@ function NewItem() {
     return (
         <div className={styles.container}>
             <h2>ADD NEW ITEM</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <form>
                 <input
                     placeholder="Name"
@@ -24,7 +23,7 @@ function NewItem() {
                     placeholder="Price"
                     type="number"
                 />
-                <input type="submit" value="ADD ITEM" />
+                <input type="submit" value="Add Item" />
             </form>
         </div>
     );
