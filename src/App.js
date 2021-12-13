@@ -6,6 +6,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import NavPanel from './features/navPanel/NavPanel';
 import Main from './features/main/Main';
 import NewItem from './features/newItem/NewItem';
+import ReserveItem from './features/reserveItem/ReserveItem';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -50,6 +51,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Main />} />
             <Route path="/add" element={<NewItem />} />
+            <Route path="/reserve" element={<ReserveItem />} />
           </Routes>
         </>
       ))}
@@ -68,6 +70,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Main />} />
           <Route path="/add" element={<NewItem />} />
+          <Route path="/reserve" element={<ReserveItem />} />
         </Routes>
       </>
       )}
