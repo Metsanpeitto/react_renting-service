@@ -1,9 +1,10 @@
 /* eslint-disable */
+import styles from './NewItem.module.scss';
 
 function NewItem() {
 
     return (
-        <div>
+        <div className={styles.container}>
             <h2>ADD NEW ITEM</h2>
             <form>
                 <input
