@@ -4,11 +4,12 @@
   @extend %flex-col;
   @extend %align-center;
   @extend %justify-center;
+
   width: 100vw;
   padding: 50px 10px;
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
   .main {
     width: 80vw;
   }
