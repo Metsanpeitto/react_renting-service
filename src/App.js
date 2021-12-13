@@ -2,11 +2,46 @@
 
 import './App.scss';
 import NavPanel from './features/navPanel/NavPanel';
+import MenuIcon from '@mui/icons-material/Menu';
+import React, { useEffect, useState } from 'react';
+import CloseIcon from '@mui/icons-material/Close';
 
 function App() {
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileView, setMobileView] = useState(false);
+
+  function toggleMenu() {
+    setMobileMenuOpen(!mobileMenuOpen);
+  }
+  
+  useEffect(() => {
+    setMobileView(window.innerWidth <= 768)
+  }, []);
+
   return (
     <div className="App">
-      <NavPanel />
+      
+      { mobileMenuOpen || mobileView && (
+        <>
+          <MenuIcon className="menu open" onClick={() => toggleMenu()} />
+        </>
+      )}
+
+      { mobileMenuOpen && (
+        <>
+          <CloseIcon className="menu close" onClick={() => toggleMenu()} />
+          <NavPanel />
+        </> 
+      )}
+
+      { mobileView || (
+          <>
+            <NavPanel />
+          </>
+        )
+      }
+
     </div>
   );
 }

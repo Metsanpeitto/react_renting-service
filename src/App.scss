@@ -3,3 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.menu {
+  position: absolute;
+  top: 10px;
+}
+
+.open {
+  left: 10px;
+}
+
+.close {
+  right: 10px;
+}
