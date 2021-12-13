@@ -39,6 +39,25 @@ const signUp = async (user) => axios.post(`${url}/register`, {
         var user = Object.json;
     });
 
+const signOut = async (user) => {
+    const response = await axios.delete("http://localhost:3000/logout",
+        {
+            user: {
+                email: `${user.email}`,
+                password: `${user.password}`,
+            }
+        }
+    )
+        .then((res) => {
+            if (res.status === 204) {
+                localStorage.setItem("token", null);
+                return res;
+            } else {
+                throw new Error(res);
+            }
+        })
+        .catch((err) => console.error(err));
+    return response
+}
 
-
-export default { signIn, signUp };
+export default { signIn, signUp, signOut };
