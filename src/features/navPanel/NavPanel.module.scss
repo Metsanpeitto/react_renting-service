@@ -2,6 +2,7 @@
 
 .container {
   @extend %flex-col;
+
   width: 100vw;
   height: 100vh;
   padding: 10px;
@@ -9,6 +10,7 @@
   header {
     @extend %flex-col;
     @extend %align-center;
+
     height: 20vh;
 
     img {
@@ -18,7 +20,8 @@
   }
 
   nav {
-    @extend %flex-col;  
+    @extend %flex-col;
+
     margin-bottom: auto;
 
     a {
@@ -30,8 +33,9 @@
 
   footer {
     @extend %flex-col;
+
     gap: 10px;
-  
+
     .social {
       @extend %flex-row;
 
@@ -43,7 +47,7 @@
   }
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
   .container {
     width: 20vw;
   }

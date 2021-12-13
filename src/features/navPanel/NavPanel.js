@@ -1,51 +1,50 @@
-/* eslint-disable */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import styles from './NavPanel.module.scss';
 
-const NavPanel = (props) => {
-
+const NavPanel = ({ onNavClick }) => {
   const handleClick = () => {
-    props.onNavClick();
+    onNavClick();
   };
 
   return (
     <div className={styles.container}>
 
       <header>
-        <img src="https://1000logos.net/wp-content/uploads/2021/05/Google-logo.png" />
+        <img alt="logo" src="https://1000logos.net/wp-content/uploads/2021/05/Google-logo.png" />
       </header>
 
       <nav>
         <NavLink to={`${process.env.PUBLIC_URL}/`} onClick={() => handleClick()}>
-            ITEMS
+          ITEMS
         </NavLink>
         <NavLink to={`${process.env.PUBLIC_URL}/reserve`} onClick={() => handleClick()}>
-            RESERVE ITEM
+          RESERVE ITEM
         </NavLink>
         <NavLink to={`${process.env.PUBLIC_URL}/reservations`} onClick={() => handleClick()}>
-            MY RESERVATIONS
+          MY RESERVATIONS
         </NavLink>
         <NavLink to={`${process.env.PUBLIC_URL}/add`} onClick={() => handleClick()}>
-            ADD ITEM
+          ADD ITEM
         </NavLink>
         <NavLink to={`${process.env.PUBLIC_URL}/delete`} onClick={() => handleClick()}>
-            DELETE ITEM
+          DELETE ITEM
         </NavLink>
       </nav>
 
       <footer>
 
         <div className={styles.social}>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
+          <img alt="twitter" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
 
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
-          
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
-          
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
+          <img alt="facebook" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
 
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
+          <img alt="google" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
+
+          <img alt="vimeo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
+
+          <img alt="pinterest" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
         </div>
 
         <small>
@@ -56,6 +55,10 @@ const NavPanel = (props) => {
 
     </div>
   );
+};
+
+NavPanel.propTypes = {
+  onNavClick: PropTypes.func.isRequired,
 };
 
 export default NavPanel;

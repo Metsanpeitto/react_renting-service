@@ -1,13 +1,10 @@
-/* eslint-disable */
-
 import './App.scss';
-import NavPanel from './features/navPanel/NavPanel';
 import MenuIcon from '@mui/icons-material/Menu';
 import React, { useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
+import NavPanel from './features/navPanel/NavPanel';
 
 function App() {
-
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileView, setMobileView] = useState(false);
 
@@ -17,14 +14,13 @@ function App() {
 
   function hideMenu() {
     setMobileMenuOpen(false);
-  };
-  
+  }
+
   useEffect(() => {
-    setMobileView(window.innerWidth <= 768)
+    setMobileView(window.innerWidth <= 768);
   }, []);
 
   useEffect(() => {
-
     const handleResize = () => {
       if (window.innerWidth > 768) {
         setMobileMenuOpen(false);
@@ -35,35 +31,33 @@ function App() {
     };
 
     window.addEventListener('resize', handleResize);
-    
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    };
 
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
     <div className="App">
-      
-      { mobileMenuOpen || mobileView && (
+
+      { (mobileMenuOpen) || (mobileView && (
         <>
           <MenuIcon className="menu open" onClick={() => toggleMenu()} />
         </>
-      )}
+      ))}
 
       { mobileMenuOpen && (
         <>
           <CloseIcon className="menu close" onClick={() => toggleMenu()} />
           <NavPanel onNavClick={() => hideMenu()} />
-        </> 
+        </>
       )}
 
       { mobileView || (
-          <>
-            <NavPanel />
-          </>
-        )
-      }
+      <>
+        <NavPanel />
+      </>
+      )}
 
     </div>
   );
