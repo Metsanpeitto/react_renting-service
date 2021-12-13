@@ -50,6 +50,7 @@ npm start
 
 ### Verify linters
 
+
 ```cmd
 npx eslint .
 npx stylelint "**/*.{css,scss}"
