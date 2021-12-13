@@ -1,8 +1,10 @@
 import './App.scss';
 import MenuIcon from '@mui/icons-material/Menu';
 import React, { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
 import NavPanel from './features/navPanel/NavPanel';
+import Main from './features/main/Main';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -43,6 +45,10 @@ function App() {
       { (mobileMenuOpen) || (mobileView && (
         <>
           <MenuIcon className="menu open" onClick={() => toggleMenu()} />
+
+          <Routes>
+            <Route exact path="/" element={<Main />} />
+          </Routes>
         </>
       ))}
 
@@ -56,6 +62,10 @@ function App() {
       { mobileView || (
       <>
         <NavPanel />
+
+        <Routes>
+          <Route exact path="/" element={<Main />} />
+        </Routes>
       </>
       )}
 
