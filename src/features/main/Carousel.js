@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./Carousel.module.scss";
+import ItemCard from "./ItemCard";
 
 function PrevArrow(props) {
   const { className, style, onClick } = props;
@@ -49,12 +50,13 @@ export default class Carousel extends Component {
     return (
       <>
         <Slider {...settings} className={styles.slider}>
-          <div>a</div>
-          <div>b</div>
-          <div>c</div>
-          <div>d</div>
-          <div>e</div>
-          <div>f</div>
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
         </Slider>
       </>
     );
