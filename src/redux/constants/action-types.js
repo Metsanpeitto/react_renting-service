@@ -1,3 +1,4 @@
+/* eslint-disable */
 export const ADD_RESERVATION = 'ADD_RESERVATION';
 export const RECEIVE_RESERVATIONS = 'RECEIVE_RESERVATIONS';
 export const ADD_ITEM = 'ADD_ITEM';
