@@ -4,6 +4,7 @@
   @extend %flex-col;
   @extend %align-center;
   @extend %justify-center;
+
   padding: 50px;
   height: 100vh;
   width: 100vw;
@@ -11,11 +12,12 @@
   background: url('https://www.pngplay.com/wp-content/uploads/2/Boat-Transparent-Background.png');
   background-size: cover;
   background-position: center;
-  box-shadow: inset 0 0 0 1000px rgba(151,191,15,0.9);
+  box-shadow: inset 0 0 0 1000px rgba(151, 191, 15, 0.9);
   color: white;
 
   form {
     @extend %flex-col;
+
     gap: 30px;
 
     input {
@@ -23,8 +25,9 @@
       border-radius: 50px;
       padding: 10px;
       font-weight: bold;
-      
-      &[type="text"], &[type="number"] {
+
+      &[type="text"],
+      &[type="number"] {
         background-color: #97bf0f;
 
         &::placeholder {
@@ -35,7 +38,6 @@
       &[type="submit"] {
         background-color: white;
         color: #97bf0f;
-
       }
     }
   }
