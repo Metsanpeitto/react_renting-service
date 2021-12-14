@@ -19,7 +19,7 @@ function ReserveItem() {
 
         <DateTimePicker className={`${styles.input} ${styles.data}`} />
 
-        <Select className={styles.input} />
+        <Select />
 
         <input className={styles.input} type="submit" value="Reserve Item" />
 
