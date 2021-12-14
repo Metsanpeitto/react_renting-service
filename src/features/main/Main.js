@@ -25,7 +25,7 @@ const Main = () => {
     <div className={styles.main}>
       <h1>LATEST MODELS</h1>
       <p>Please select a model</p>
-      <Carousel />
+      <Carousel items={items}/>
     </div>
   );
 };

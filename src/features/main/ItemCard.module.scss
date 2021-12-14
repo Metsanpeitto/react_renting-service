@@ -4,6 +4,17 @@
   @extend %flex-col;
   @extend %align-center;
 
+  .div-img {
+    @extend %flex-col;
+    @extend %justify-center;
+    height: 250px;
+
+    img {
+      width: 250px;
+      object-fit: cover;
+    }
+  }
+
   .social {
     @extend %flex-row;
 

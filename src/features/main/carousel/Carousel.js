@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable */
 
 import React from 'react';
 import Slider from 'react-slick';
@@ -9,7 +10,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './Carousel.module.scss';
 
-const Carousel = () => {
+const Carousel = ({ items }) => {
   const settings = {
     infinite: false,
     slidesToShow: 3,
@@ -31,13 +32,18 @@ const Carousel = () => {
   return (
     <>
       <Slider {...settings} className={styles.slider}>
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
+
+        {
+          items.map((item) => {
+            console.log(item);
+            return (
+              <ItemCard key={item.id} item={item} />
+            )
+          }
+            
+          )
+        }
+
       </Slider>
     </>
   );
