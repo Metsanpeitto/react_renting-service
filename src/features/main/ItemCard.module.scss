@@ -4,6 +4,7 @@
   @extend %flex-col;
   @extend %align-center;
   gap: 20px;
+  margin-bottom: 50px;
 
   .divider {
     width: 50%;
@@ -38,5 +39,11 @@
       border-radius: 50%;
       padding: 2.5px;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .divider {
+    width: 50%;
   }
 }
