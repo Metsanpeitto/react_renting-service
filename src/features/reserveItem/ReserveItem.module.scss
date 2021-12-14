@@ -1,6 +1,5 @@
 @import '../../app/scss/flex';
 
-
 .container {
   @extend %flex-col;
   @extend %align-center;
@@ -39,10 +38,6 @@
         background-color: white;
         color: #97bf0f;
       }
-    }
-
-    .data {
-      
     }
   }
 }

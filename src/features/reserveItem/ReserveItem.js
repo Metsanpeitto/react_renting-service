@@ -17,7 +17,7 @@ function ReserveItem() {
           className={styles.input}
         />
 
-        <DateTimePicker className={`${styles.input} ${styles.data}`} />
+        <DateTimePicker className={styles.input} />
 
         <Select />
 
