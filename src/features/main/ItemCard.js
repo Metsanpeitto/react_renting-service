@@ -8,7 +8,7 @@ const ItemCard = ( { item }) => {
   return (
   <div className={styles['item-card']}>
 
-    <div className={styles['div-img']}>
+    <div className={styles['div-img']} style={{backgroundColor:item.color}}>
       <img alt="item" src={ item.image } />
     </div>
 
