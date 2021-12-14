@@ -34,13 +34,8 @@ const Carousel = ({ items }) => {
       <Slider {...settings} className={styles.slider}>
 
         {
-          items.map((item) => {
-            console.log(item);
-            return (
-              <ItemCard key={item.id} item={item} />
-            )
-          }
-            
+          items.map((item) =>
+            <ItemCard key={item.id} item={item} />            
           )
         }
 

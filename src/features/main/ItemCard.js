@@ -1,5 +1,8 @@
 /* eslint-disable */
 
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import styles from './ItemCard.module.scss';
 
 const ItemCard = ( { item }) => {
@@ -19,9 +22,9 @@ const ItemCard = ( { item }) => {
     <p>{ item.description }</p>
 
     <div className={styles.social}>
-      <img alt="facebook" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
-      <img alt="twitter" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
-      <img alt="instagram" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
+      <FacebookRoundedIcon />
+      <TwitterIcon />
+      <InstagramIcon />
     </div>
 
   </div>);

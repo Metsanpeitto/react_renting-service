@@ -13,21 +13,30 @@
   .div-img {
     @extend %flex-col;
     @extend %justify-center;
-    height: 250px;
+    height: 200px;
     border-radius: 100%;
 
     img {
-      width: 250px;
+      width: 200px;
       object-fit: cover;
     }
   }
 
+  p {
+    color: grey;
+  }
+
   .social {
     @extend %flex-row;
+    gap: 10px;
 
-    img {
+    svg {
       width: 25px;
       height: auto;
+      color: grey;
+      border: 2px solid grey;
+      border-radius: 50%;
+      padding: 2.5px;
     }
   }
 }
