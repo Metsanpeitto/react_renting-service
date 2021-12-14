@@ -1,7 +1,7 @@
 /* eslint-disable */
 import axios from 'axios';
 
-const url = 'http://localhost:3000/items';
+const url = 'https://frozen-dusk-66130.herokuapp.com/items';
 
 const getItems = async () => axios.get(`${url}`).then((result) => {
     let items = [];

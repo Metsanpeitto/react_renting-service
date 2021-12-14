@@ -1,10 +1,10 @@
 /* eslint-disable */
 import axios from 'axios';
 
-const url = 'http://localhost:3000';
+const url = 'https://frozen-dusk-66130.herokuapp.com/';
 
 const signIn = async (user) => {
-    const response = await axios.post("http://localhost:3000/login",
+    const response = await axios.post(`${url}/login`,
         {
             user: {
                 email: `${user.email}`,
@@ -40,7 +40,7 @@ const signUp = async (user) => axios.post(`${url}/register`, {
     });
 
 const signOut = async (user) => {
-    const response = await axios.delete("http://localhost:3000/logout",
+    const response = await axios.delete(`${url}/logout`,
         {
             user: {
                 email: `${user.email}`,
