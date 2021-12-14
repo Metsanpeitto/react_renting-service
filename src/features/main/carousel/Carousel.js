@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Slider from 'react-slick';
+import PropTypes from 'prop-types';
 import ItemCard from '../ItemCard';
 import NextArrow from './NextArrow';
 import PrevArrow from './PrevArrow';
@@ -9,7 +10,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './Carousel.module.scss';
 
-const Carousel = () => {
+const Carousel = ({ items }) => {
   const settings = {
     infinite: false,
     slidesToShow: 3,
@@ -31,16 +32,25 @@ const Carousel = () => {
   return (
     <>
       <Slider {...settings} className={styles.slider}>
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
+
+        {
+          items.map((item) => <ItemCard key={item.id} item={item} />)
+        }
+
       </Slider>
     </>
   );
 };
 
 export default Carousel;
+
+Carousel.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape(
+    {
+      name: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      color: PropTypes.string.isRequired,
+    },
+  ).isRequired).isRequired,
+};

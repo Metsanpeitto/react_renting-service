@@ -1,9 +1,10 @@
-/* eslint-disable */
 import reservations from '../../api/reservations';
 import items from '../../api/items';
 import users from '../../api/user';
 
-import { RECEIVE_RESERVATIONS, RECEIVE_ITEMS } from '../constants/action-types';
+import {
+  RECEIVE_RESERVATIONS, RECEIVE_USER, RESET_USER, RECEIVE_ITEMS,
+} from '../constants/action-types';
 
 export const receiveReservations = (reservations) => ({
   type: RECEIVE_RESERVATIONS,
@@ -72,10 +73,8 @@ export const signUp = (user) => (dispatch) => {
   });
 };
 
-
 export const signIn = (user) => (dispatch) => {
   users.signIn(user).then((response) => {
-    const token = localStorage.getItem("token");
     if (response.statusText === 'Created') {
       dispatch(receiveUser(response.data));
     }
@@ -84,7 +83,6 @@ export const signIn = (user) => (dispatch) => {
 
 export const signOut = (user) => (dispatch) => {
   users.signOut(user).then((response) => {
-    const token = localStorage.setItem("token", null);
     if (response.status === 204) {
       dispatch(resetUser());
     }
