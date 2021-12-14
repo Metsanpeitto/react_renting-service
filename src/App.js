@@ -7,6 +7,8 @@ import NavPanel from './features/navPanel/NavPanel';
 import Main from './features/main/Main';
 import NewItem from './features/newItem/NewItem';
 import ReserveItem from './features/reserveItem/ReserveItem';
+import User from './features/user/User';
+import SignUp from './features/user/SignUp';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -44,7 +46,7 @@ function App() {
   return (
     <div className="App">
 
-      { (mobileMenuOpen) || (mobileView && (
+      {(mobileMenuOpen) || (mobileView && (
         <>
           <MenuIcon className="menu open" onClick={() => toggleMenu()} />
 
@@ -52,27 +54,31 @@ function App() {
             <Route exact path="/" element={<Main />} />
             <Route path="/add" element={<NewItem />} />
             <Route path="/reserve" element={<ReserveItem />} />
+            <Route path="/user" element={<User />} />
+            <Route path="/sign_up" element={<SignUp />} />
           </Routes>
         </>
       ))}
 
-      { mobileMenuOpen && (
+      {mobileMenuOpen && (
         <>
           <CloseIcon className="menu close" onClick={() => toggleMenu()} />
           <NavPanel onNavClick={() => hideMenu()} />
         </>
       )}
 
-      { mobileView || (
-      <>
-        <NavPanel />
+      {mobileView || (
+        <>
+          <NavPanel />
 
-        <Routes>
-          <Route exact path="/" element={<Main />} />
-          <Route path="/add" element={<NewItem />} />
-          <Route path="/reserve" element={<ReserveItem />} />
-        </Routes>
-      </>
+          <Routes>
+            <Route exact path="/" element={<Main />} />
+            <Route path="/add" element={<NewItem />} />
+            <Route path="/reserve" element={<ReserveItem />} />
+            <Route path="/user" element={<User />} />
+            <Route path="/sign_up" element={<SignUp />} />
+          </Routes>
+        </>
       )}
 
     </div>

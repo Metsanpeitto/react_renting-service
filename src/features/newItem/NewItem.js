@@ -1,32 +1,34 @@
 /* eslint-disable */
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { addItem } from '../../redux/api/api';
 
 import styles from './NewItem.module.scss';
 
 function NewItem() {
-
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.userReducer.user);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
   const [color, setColor] = useState("");
   const [price, setPrice] = useState("");
-
+  let navigate = useNavigate();
 
   const submitItemToStore = (e) => {
-      const newItem = {
-          name,
-          description,
-          image,
-          color,
-          price,
-      };
+    const newItem = {
+      userId: user.id,
+      name,
+      description,
+      image,
+      color,
+      price,
+    };
 
-      e.preventDefault();
-
-      dispatch(addItem(newItem));
+    e.preventDefault();
+    dispatch(addItem(newItem));
+    navigate('/')
   };
 
   return (

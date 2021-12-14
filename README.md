@@ -61,7 +61,8 @@ npx eslint . --fix
 npx stylelint "**/*.{css,scss}" --fix
 ```
 
-## To run jest test
+## To run jest testnpm start
+
 ```cmd
 npm run test
 ```
