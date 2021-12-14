@@ -21,29 +21,25 @@ const deleteItem = async (itemId) => {
 };
 
 const addItem = async (item) => {
-    const token = localStorage.getItem("token");
-    const config = {
-        headers: {
-            Authorization: token
-        }
-    }
-    console.log(item)
-    const body = {
-        user_id: item.userId,
-        name: item.name,
-        description: item.description,
-        image: item.image,
-        price: item.price,
-        color: item.color,
-    };
+  const token = localStorage.getItem('token');
+  const config = {
+    headers: {
+      Authorization: token,
+    },
+  };
+  const body = {
+    user_id: item.userId,
+    name: item.name,
+    description: item.description,
+    image: item.image,
+    price: item.price,
+    color: item.color,
+  };
 
-    const response = axios.post(`${url}`, body, config)
-        .then((result) => result.data);
+  const response = axios.post(`${url}`, body, config)
+    .then((result) => result.data);
 
-    return response;
-}
-
-
-
+  return response;
+};
 
 export default { getItems, addItem, deleteItem };

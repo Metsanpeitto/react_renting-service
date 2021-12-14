@@ -3,6 +3,7 @@
 .item-card {
   @extend %flex-col;
   @extend %align-center;
+
   gap: 20px;
   margin-bottom: 50px;
 
@@ -14,6 +15,7 @@
   .div-img {
     @extend %flex-col;
     @extend %justify-center;
+
     height: 200px;
     border-radius: 100%;
 
@@ -29,6 +31,7 @@
 
   .social {
     @extend %flex-row;
+
     gap: 10px;
 
     svg {
