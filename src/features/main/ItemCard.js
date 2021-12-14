@@ -22,9 +22,9 @@ const ItemCard = ( { item }) => {
     <p>{ item.description }</p>
 
     <div className={styles.social}>
-      <FacebookRoundedIcon />
-      <TwitterIcon />
-      <InstagramIcon />
+      <a href="https://facebook.com"><FacebookRoundedIcon /></a>
+      <a href="https://twitter.com"><TwitterIcon /></a>
+      <a href="https://instagram.com"><InstagramIcon /></a>
     </div>
 
   </div>);

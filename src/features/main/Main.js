@@ -13,12 +13,10 @@ const Main = () => {
   const [calledItems, setCalledItems] = useState(null);
 
   useEffect(() => {
-    console.log("...getting items...");
     if (!calledItems && items.length === 0) {
       setCalledItems(true);
       dispatch(getItems());
     }
-    console.log(items);
   });
 
   return (
