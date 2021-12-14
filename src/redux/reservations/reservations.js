@@ -1,8 +1,7 @@
-/* eslint-disable */
 import {
   ADD_RESERVATION,
   RECEIVE_RESERVATIONS,
-} from "../constants/action-types";
+} from '../constants/action-types';
 
 const initialState = { reservations: [] };
 

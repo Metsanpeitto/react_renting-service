@@ -1,4 +1,3 @@
-/* eslint-disable */
 import axios from 'axios';
 
 const url = 'https://frozen-dusk-66130.herokuapp.com/';
@@ -27,17 +26,13 @@ const signIn = async (user) => {
 
 
 const signUp = async (user) => axios.post(`${url}/register`, {
-    user: {
-        name: user.name,
-        email: user.email,
-        password: user.password,
-        password_confirmation: user.passwordConfirmation
-    }
-})
-    .then((result) => {
-        Object.json = JSON.parse(result);
-        var user = Object.json;
-    });
+  user: {
+    name: user.name,
+    email: user.email,
+    password: user.password,
+    password_confirmation: user.passwordConfirmation,
+  },
+});
 
 const signOut = async (user) => {
     const response = await axios.delete(`${url}/logout`,
@@ -59,5 +54,6 @@ const signOut = async (user) => {
         .catch((err) => console.error(err));
     return response
 }
+
 
 export default { signIn, signUp, signOut };
