@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import './App.scss';
 import MenuIcon from '@mui/icons-material/Menu';
 import React, { useEffect, useState } from 'react';
