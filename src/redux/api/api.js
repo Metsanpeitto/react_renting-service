@@ -66,7 +66,7 @@ export const resetUser = () => ({
 export const signUp = (user) => (dispatch) => {
     users.signUp(user).then((response) => {
         if (response === 'Created') {
-            //dispatch(receiveUser(response));
+            dispatch(receiveUser(response));
         }
         return response;
     });
@@ -77,7 +77,7 @@ export const signIn = (user) => (dispatch) => {
     users.signIn(user).then((response) => {
         const token = localStorage.getItem("token");
         if (response.statusText === 'Created') {
-            //dispatch(receiveUser(response.data));
+            dispatch(receiveUser(response.data));
         }
     });
 };
@@ -86,7 +86,7 @@ export const signOut = (user) => (dispatch) => {
     users.signOut(user).then((response) => {
         const token = localStorage.setItem("token", null);
         if (response.status === 204) {
-            //dispatch(resetUser());
+            dispatch(resetUser());
         }
     });
 };

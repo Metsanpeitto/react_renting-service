@@ -36,6 +36,7 @@ const addItem = async (item) => {
             Authorization: token
         }
     }
+    console.log(item)
     const body = {
         user_id: item.userId,
         name: item.name,
@@ -47,6 +48,7 @@ const addItem = async (item) => {
 
     const response = axios.post(`${url}`, body, config)
         .then((result) => result.data);
+    console.log(result)
     return response;
 }
 
