@@ -8,6 +8,8 @@
     @extend %flex-col;
     @extend %justify-center;
     height: 250px;
+    background-color: grey;
+    border-radius: 100%;
 
     img {
       width: 250px;
