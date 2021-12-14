@@ -14,6 +14,8 @@ const ItemCard = ( { item }) => {
 
     <h2>{ item.name }</h2>
 
+    <div className={styles.divider}></div>
+
     <p>{ item.description }</p>
 
     <div className={styles.social}>

@@ -3,6 +3,12 @@
 .item-card {
   @extend %flex-col;
   @extend %align-center;
+  gap: 20px;
+
+  .divider {
+    width: 50%;
+    border-bottom: 5px dotted grey;
+  }
 
   .div-img {
     @extend %flex-col;
