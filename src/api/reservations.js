@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:3000/reservations';
+const url = 'https://frozen-dusk-66130.herokuapp.com/reservations';
 
 const getReservations = async () => axios.get(`${url}`).then((result) => {
   let reservations = [];

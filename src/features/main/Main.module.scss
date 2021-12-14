@@ -7,10 +7,15 @@
 
   width: 100vw;
   padding: 50px 10px;
+
+  p {
+    color: grey;
+  }
 }
 
 @media (min-width: 768px) {
   .main {
     width: 80vw;
+    height: 100vh;
   }
 }

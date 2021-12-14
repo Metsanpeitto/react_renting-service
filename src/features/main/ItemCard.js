@@ -1,21 +1,40 @@
+import PropTypes from 'prop-types';
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import styles from './ItemCard.module.scss';
 
-const ItemCard = () => (
+const ItemCard = ({ item }) => (
   <div className={styles['item-card']}>
 
-    <img alt="item" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
+    <div className={styles['div-img']} style={{ backgroundColor: item.color }}>
+      <img alt="item" src={item.image} />
+    </div>
 
-    <h2>Item name</h2>
+    <h2>{ item.name }</h2>
 
-    <p>Description</p>
+    <div className={styles.divider} />
+
+    <p>{ item.description }</p>
 
     <div className={styles.social}>
-      <img alt="facebook" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
-      <img alt="twitter" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
-      <img alt="instagram" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU" />
+      <a href="https://facebook.com" aria-label="facebook"><FacebookRoundedIcon /></a>
+      <a href="https://twitter.com" aria-label="twitter"><TwitterIcon /></a>
+      <a href="https://instagram.com" aria-label="instagram"><InstagramIcon /></a>
     </div>
 
   </div>
 );
 
 export default ItemCard;
+
+ItemCard.propTypes = {
+  item: PropTypes.shape(
+    {
+      name: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      color: PropTypes.string.isRequired,
+    },
+  ).isRequired,
+};

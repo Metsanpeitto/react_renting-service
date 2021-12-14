@@ -4,12 +4,49 @@
   @extend %flex-col;
   @extend %align-center;
 
+  gap: 20px;
+  margin-bottom: 50px;
+
+  .divider {
+    width: 50%;
+    border-bottom: 5px dotted grey;
+  }
+
+  .div-img {
+    @extend %flex-col;
+    @extend %justify-center;
+
+    height: 200px;
+    border-radius: 100%;
+
+    img {
+      width: 200px;
+      object-fit: cover;
+    }
+  }
+
+  p {
+    color: grey;
+  }
+
   .social {
     @extend %flex-row;
 
-    img {
+    gap: 10px;
+
+    svg {
       width: 25px;
       height: auto;
+      color: grey;
+      border: 2px solid grey;
+      border-radius: 50%;
+      padding: 2.5px;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .divider {
+    width: 50%;
   }
 }
