@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -37,14 +39,14 @@ const NavPanel = ({ onNavClick }) => {
             </NavLink>
           </>
         ) : (
-          <>
+
             <NavLink
               to={`${process.env.PUBLIC_URL}/user`}
               onClick={() => handleClick()}
             >
               ACCOUNT
             </NavLink>
-          </>
+
         )}
 
         {user.role === 'admin' ? (
