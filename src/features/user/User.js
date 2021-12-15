@@ -44,30 +44,30 @@ const User = () => {
     <>
       {!userR.id
         ? (
-          <>
-            <div className={styles.container}>
-              <h2>SIGN IN</h2>
-              <form onSubmit={(e) => submitSignIn(e)}>
-                <input
-                  placeholder="Email"
-                  onChange={(e) => setEmail(e.target.value)}
-                  type="email"
-                />
-                <input
-                  placeholder="Password"
-                  onChange={(e) => setPassword(e.target.value)}
-                  type="password"
-                />
-                <input type="submit" value="Sign In" />
-                <Link
-                  className={styles.button}
-                  to={`${process.env.PUBLIC_URL}/sign_up`}
-                >
-                  Sign Up
-                </Link>
-              </form>
-            </div>
-          </>
+          <div className={styles.container}>
+            <h2>SIGN IN</h2>
+            <form onSubmit={(e) => submitSignIn(e)}>
+              <input
+                placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                value={email}
+              />
+              <input
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+                type="password"
+                value={password}
+              />
+              <input type="submit" value="Sign In" />
+              <Link
+                className={styles.button}
+                to={`${process.env.PUBLIC_URL}/sign_up`}
+              >
+                Sign Up
+              </Link>
+            </form>
+          </div>
         )
 
         : (
