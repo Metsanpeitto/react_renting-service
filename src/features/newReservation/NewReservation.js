@@ -2,17 +2,15 @@
 import React, { useState, useEffect } from "react";
 import DateTimePicker from 'react-datetime-picker';
 import Select from 'react-select';
-import styles from './NewReservation.module.scss';
-
-
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from "react-router-dom";
-
-import { addReservation } from '../../redux/api/api';
 import { useNavigate } from "react-router-dom";
+import { addReservation } from '../../redux/api/api';
+/* eslint-disable */
+
+import styles from './NewReservation.module.scss';
 
 function NewReservation() {
-
   const param = useParams();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.userReducer.user);
@@ -20,6 +18,7 @@ function NewReservation() {
   const [city, setCity] = useState("");
   const [value, setDate] = useState(new Date());
   const [itemId, setItemId] = useState("");
+  const [receivedItemId, setReceivedItemId] = useState(null);
   const [optionsReady, setOptionsReady] = useState(false);
   const [options, setOptions] = useState([]);
   let navigate = useNavigate();
@@ -31,13 +30,16 @@ function NewReservation() {
       city,
       value
     };
-    console.log(newReservation);
-    console.log(user);
-    dispatch(addReservation(newReservation));
-    navigate('/')
+
+    if (newReservation.userId && itemId && city && value) {
+      dispatch(addReservation(newReservation));
+      navigate('/')
+    }
+
   };
 
-  useEffect(() => {
+  useEffect((props) => {
+    console.log(props)
     if (items.length > 0 && optionsReady == false) {
       items.forEach(item => {
         options.push({ value: item.id, label: `${item.name}` })
@@ -48,7 +50,10 @@ function NewReservation() {
     }
 
     if (itemId == '' && param.itemId) {
+      console.log(param)
+      console.log(itemId)
       setItemId(param.itemId)
+      setReceivedItemId(true);
     }
   });
 
@@ -63,11 +68,12 @@ function NewReservation() {
           type="text"
           className={styles.input}
           onChange={(e) => setCity(e.target.value)}
+          required
         />
 
-        <DateTimePicker className={styles.input} onChange={setDate} value={value} />
+        <DateTimePicker className={styles.input} onChange={setDate} value={value} required />
 
-        {optionsReady ?
+        {!receivedItemId ?
           <Select options={options} onChange={(data) => setItemId(data.value)} />
           : null
         }

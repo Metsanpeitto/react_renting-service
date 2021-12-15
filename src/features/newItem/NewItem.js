@@ -15,7 +15,7 @@ function NewItem() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
-  const [color, setColor] = useState("");
+  const [color, setColor] = useState("White");
   const [price, setPrice] = useState("");
   const images = [
     "https://i.imgur.com/SZJIKne.png",
@@ -38,7 +38,6 @@ function NewItem() {
   useEffect(() => {
     if (!calledItems && items.length !== 0) {
       setCalledItems(items);
-      console.log(items);
     }
   });
 
@@ -63,10 +62,13 @@ function NewItem() {
       color,
       price,
     };
-
     e.preventDefault();
-    dispatch(addItem(newItem));
-    navigate("/");
+
+    if (newItem.userId && name && description && image && price) {
+      console.log(newItem)
+      dispatch(addItem(newItem));
+      navigate("/");
+    }
   };
 
   return (
@@ -77,16 +79,19 @@ function NewItem() {
           placeholder="Name"
           type="text"
           onChange={(e) => setName(e.target.value)}
+          required
         />
         <input
           placeholder="Description"
           type="text"
           onChange={(e) => setDescription(e.target.value)}
+          required
         />
         <input
           placeholder="Price"
           type="number"
           onChange={(e) => setPrice(e.target.value)}
+          required
         />
 
         <Select
