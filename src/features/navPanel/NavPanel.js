@@ -52,13 +52,13 @@ const NavPanel = ({ onNavClick }) => {
         {user.role === 'admin' ? (
           <>
             <NavLink
-              to={`${process.env.PUBLIC_URL}/reserve`}
+              to={`${process.env.PUBLIC_URL}/new_reservation/0`}
               onClick={() => handleClick()}
             >
               RESERVE ITEM
             </NavLink>
             <NavLink
-              to={`${process.env.PUBLIC_URL}/reservations`}
+              to={`${process.env.PUBLIC_URL}/my_reservations`}
               onClick={() => handleClick()}
             >
               MY RESERVATIONS
