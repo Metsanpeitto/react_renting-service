@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getItems, deleteItem } from '../redux/api/api';
+import { getItems, deleteItem } from '../../redux/api/api';
 import { useNavigate } from "react-router-dom";
 
 const DeleteItem = () => {
@@ -9,10 +9,8 @@ const DeleteItem = () => {
     const items = useSelector((state) => state.itemsReducer.items);
     const dispatch = useDispatch();
     const [calledItems, setCalledItems] = useState(null);
-    let navigate = useNavigate();
 
     useEffect(() => {
-        console.log("Hi");
         if (!calledItems && items.length === 0) {
             dispatch(getItems());
             console.log(items);

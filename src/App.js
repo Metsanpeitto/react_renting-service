@@ -11,6 +11,7 @@ import User from './features/user/User';
 import SignUp from './features/user/SignUp';
 import Details from './features/details/Details';
 import MyReservations from './features/myReservations/MyReservations';
+import Delete from './features/deleteItem/DeleteItem';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -60,6 +61,7 @@ function App() {
             <Route path="/my_reservations" element={<MyReservations />} />
             <Route path="/user" element={<User />} />
             <Route path="/sign_up" element={<SignUp />} />
+            <Route path="/delete" element={<Delete />} />
           </Routes>
         </>
       ))}
@@ -83,6 +85,7 @@ function App() {
             <Route path="/my_reservations" element={<MyReservations />} />
             <Route path="/user" element={<User />} />
             <Route path="/sign_up" element={<SignUp />} />
+            <Route path="/delete" element={<Delete />} />
           </Routes>
         </>
       )}
