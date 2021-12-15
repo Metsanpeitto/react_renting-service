@@ -9,6 +9,7 @@ import NewItem from './features/newItem/NewItem';
 import ReserveItem from './features/reserveItem/ReserveItem';
 import User from './features/user/User';
 import SignUp from './features/user/SignUp';
+import Details from './features/details/Details';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -52,6 +53,7 @@ function App() {
 
           <Routes>
             <Route exact path="/" element={<Main />} />
+            <Route path="/details/:itemName" element={<Details />} />
             <Route path="/add" element={<NewItem />} />
             <Route path="/reserve" element={<ReserveItem />} />
             <Route path="/user" element={<User />} />
@@ -73,6 +75,7 @@ function App() {
 
           <Routes>
             <Route exact path="/" element={<Main />} />
+            <Route path="/details/:itemName" element={<Details />} />
             <Route path="/add" element={<NewItem />} />
             <Route path="/reserve" element={<ReserveItem />} />
             <Route path="/user" element={<User />} />

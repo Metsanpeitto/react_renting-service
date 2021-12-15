@@ -3,6 +3,10 @@
   padding: 50px 10px;
 }
 
+a {
+  text-decoration: none;
+}
+
 @media (min-width: 768px) {
   .slider {
     width: 80vw;

@@ -1,7 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable */
+
 
 import React from 'react';
 import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ItemCard from '../ItemCard';
 import NextArrow from './NextArrow';
@@ -34,8 +37,20 @@ const Carousel = ({ items }) => {
       <Slider {...settings} className={styles.slider}>
 
         {
-          items.map((item) => <ItemCard key={item.id} item={item} />)
-        }
+          items.map((item) => (
+            <>
+              <Link
+                key={`${item.id}`}
+                to={{
+                  pathname: `/details/${item.name}`,
+                }}
+                data={item}
+              >
+                <ItemCard key={item.name} item={item} />
+              </Link>
+            </>
+          )
+        )}
 
       </Slider>
     </>
