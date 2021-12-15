@@ -41,10 +41,10 @@ const User = () => {
   };
 
   return (
-    <>
+    <div className={styles.container}>
       {!userR.id
         ? (
-          <div className={styles.container}>
+          <>
             <h2>SIGN IN</h2>
             <form onSubmit={(e) => submitSignIn(e)}>
               <input
@@ -67,15 +67,18 @@ const User = () => {
                 Sign Up
               </Link>
             </form>
-          </div>
+          </>
         )
 
         : (
-          <div>
-            <button type="button" onClick={submitSignOut}>Sign Out</button>
-          </div>
+          <>
+            <h2>ACCOUNT</h2>
+            <form onSubmit={() => submitSignOut()}>
+              <input type="submit" value="Sign Out" />
+            </form>
+          </>
         )}
-    </>
+    </div>
   );
 };
 
