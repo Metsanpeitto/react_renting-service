@@ -7,6 +7,7 @@
   flex-wrap: wrap;
   width: 100vw;
   height: 100vh;
+  padding: 0px 10px;
 
   .image {
     @extend %flex-col;
@@ -20,6 +21,7 @@
 
   .info {
     @extend %flex-col;
+    @extend %justify-center;
     height: 50vh;
     gap: 10px;
   }
@@ -54,5 +56,22 @@
   .container {
     width: 80vw;
     // height: 100vh;
+
+    .image {
+      justify-content: center;
+      width: 70%;
+      
+      img {
+        width: 100%;
+      }
+    }
+    
+    .info {
+      width: 30%;
+    }
+
+    .back {
+      left: 20%;
+    }
   }
 }
