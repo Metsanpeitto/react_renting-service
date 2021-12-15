@@ -4,14 +4,17 @@
   @extend %flex-row;
   @extend %justify-center;
   @extend %align-center;
+
   flex-wrap: wrap;
   width: 100vw;
   height: 100vh;
-  padding: 0px 10px;
+  padding: 0 10px;
 
   .image {
     @extend %flex-col;
+
     height: 50vh;
+
     @extend %justify-end;
 
     img {
@@ -22,10 +25,11 @@
   .info {
     @extend %flex-col;
     @extend %justify-center;
+
     height: 50vh;
     gap: 10px;
   }
-  
+
   .back {
     position: absolute;
     top: 50%;
@@ -49,7 +53,6 @@
     font-weight: bold;
     text-align: center;
   }
-  
 }
 
 @media (min-width: 768px) {
@@ -60,12 +63,12 @@
     .image {
       justify-content: center;
       width: 70%;
-      
+
       img {
         width: 100%;
       }
     }
-    
+
     .info {
       width: 30%;
     }
