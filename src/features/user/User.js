@@ -10,8 +10,8 @@ const User = () => {
   const userR = useSelector((state) => state.userReducer.user);
   const dispatch = useDispatch();
   const [user, setUser] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('as@as.com');
+  const [password, setPassword] = useState('123456');
   const navigate = useNavigate();
 
   const submitSignOut = (e) => {
@@ -27,7 +27,6 @@ const User = () => {
     if (user === '' && userR[0]) {
       setUser(userR);
     }
-    const token = localStorage.getItem('token');
   });
 
   const submitSignIn = (e) => {

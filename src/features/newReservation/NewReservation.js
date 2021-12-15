@@ -21,7 +21,7 @@ function NewReservation() {
   const [value, setDate] = useState(new Date());
   const [itemId, setItemId] = useState("");
   const [optionsReady, setOptionsReady] = useState(false);
-  const options = []
+  const [options, setOptions] = useState([]);
   let navigate = useNavigate();
 
   const submitReservationToStore = () => {
@@ -31,18 +31,22 @@ function NewReservation() {
       city,
       value
     };
+    console.log(newReservation);
+    console.log(user);
     dispatch(addReservation(newReservation));
     navigate('/')
   };
 
   useEffect(() => {
-    if (items.length > 0 && options.length == 0) {
+    if (items.length > 0 && optionsReady == false) {
       items.forEach(item => {
         options.push({ value: item.id, label: `${item.name}` })
         console.log(item);
         setOptionsReady(true);
       });
+      setOptions(options);
     }
+
     if (itemId == '' && param.itemId) {
       setItemId(param.itemId)
     }
@@ -68,7 +72,7 @@ function NewReservation() {
           : null
         }
 
-        <input className={styles.input} type="submit" value="Reserve Item" />
+        <button onClick={() => submitReservationToStore} className={styles.input} type="submit">Reserve Item</button>
 
       </form>
     </div>

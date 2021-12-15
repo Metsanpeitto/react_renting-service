@@ -1,4 +1,4 @@
-@import '../../app/scss/flex';
+@import "../../app/scss/flex";
 
 .container {
   @extend %flex-col;
@@ -9,7 +9,7 @@
   height: 100vh;
   width: 100vw;
   gap: 30px;
-  background: url('https://www.pngplay.com/wp-content/uploads/2/Boat-Transparent-Background.png');
+  background: url("https://www.pngplay.com/wp-content/uploads/2/Boat-Transparent-Background.png");
   background-size: cover;
   background-position: center;
   box-shadow: inset 0 0 0 1000px rgba(151, 191, 15, 0.9);
@@ -43,8 +43,13 @@
   }
 }
 
+
+
+
+
 @media (min-width: 768px) {
   .container {
     width: 80vw;
   }
+
 }

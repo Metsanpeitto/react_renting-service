@@ -1,4 +1,4 @@
-@import './app/scss/flex';
+@import "./app/scss/flex";
 
 * {
   margin: 0;
@@ -40,4 +40,15 @@
 
 .close {
   right: 10px;
+}
+
+.img-selector-block {
+  border: 2px solid white;
+  border-radius: 25px;
+  padding: 4%;
+  width: 300px;
+}
+
+.img-selector {
+  width: 260px;
 }

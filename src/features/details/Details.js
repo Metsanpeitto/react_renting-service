@@ -11,6 +11,7 @@ const Details = () => {
 
   const param = useParams();
   const items = useSelector((state) => state.itemsReducer.items);
+  const user = useSelector((state) => state.userReducer.user);
   const dispatch = useDispatch();
   const [calledItems, setCalledItems] = useState(null);
   const [itemDisplay, setItemDisplay] = useState(null);
@@ -18,15 +19,15 @@ const Details = () => {
 
 
   useEffect(() => {
-      if (!calledItems && items.length === 0) {
-          setCalledItems(true);
-          dispatch(getItems());
-      }
+    if (!calledItems && items.length === 0) {
+      setCalledItems(true);
+      dispatch(getItems());
+    }
 
-      if (items && param) {
-          const raw = items.find((item) => item.name === param.itemName);
-          setItemDisplay(raw);
-      }
+    if (items && param) {
+      const raw = items.find((item) => item.name === param.itemName);
+      setItemDisplay(raw);
+    }
   });
 
   if (itemDisplay) {
@@ -41,15 +42,19 @@ const Details = () => {
           <h1>{itemDisplay.name}</h1>
           <h5>{itemDisplay.description}</h5>
           <h5>Price: ${itemDisplay.price}</h5>
+          {user.name ?
+            <>
+              <Link
+                to={{
+                  pathname: `/new_reservation/${itemDisplay.id}`,
+                }}
+                data={itemDisplay}
+              >
+                Reserve
+              </Link>
+            </>
+            : null}
 
-          <Link
-            to={{
-                pathname: `/new_reservation/${itemDisplay.id}`,
-            }}
-            data={itemDisplay}
-          >
-            Reserve
-          </Link>
         </div>
 
         <button className={styles.back} onClick={() => navigate('/')}>&lt;</button>

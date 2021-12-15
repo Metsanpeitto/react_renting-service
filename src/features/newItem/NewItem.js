@@ -1,20 +1,58 @@
 /* eslint-disable */
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { addItem } from '../../redux/api/api';
+import Select from "react-select";
+import { addItem } from "../../redux/api/api";
 
-import styles from './NewItem.module.scss';
+import styles from "./NewItem.module.scss";
 
 function NewItem() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.userReducer.user);
+  const items = useSelector((state) => state.itemsReducer.items);
+  const [calledItems, setCalledItems] = useState(null);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(null);
   const [color, setColor] = useState("");
   const [price, setPrice] = useState("");
+  const images = [
+    "https://i.imgur.com/SZJIKne.png",
+    "https://i.imgur.com/7SAXljQ.png",
+    "https://i.imgur.com/ZneOae2.png",
+    "https://i.imgur.com/15OQ5yO.png",
+    "https://i.imgur.com/RdEZTBM.png",
+    "https://i.imgur.com/XSWV5kS.png",
+  ];
+  const options = [
+    { value: "Black", label: "Black" },
+    { value: "White", label: "White" },
+    { value: "Yellow", label: "Yellow" },
+    { value: "Blue", label: "Blue" },
+    { value: "Green", label: "Green" },
+  ];
+
   let navigate = useNavigate();
+
+  useEffect(() => {
+    if (!calledItems && items.length !== 0) {
+      setCalledItems(items);
+      console.log(items);
+    }
+  });
+
+  const selectImage = (data) => {
+    if (image) {
+      setImage(null);
+    } else {
+      setImage(data);
+    }
+  };
+
+  const changeColor = (data) => {
+    setColor(data);
+  };
 
   const submitItemToStore = (e) => {
     const newItem = {
@@ -28,7 +66,7 @@ function NewItem() {
 
     e.preventDefault();
     dispatch(addItem(newItem));
-    navigate('/')
+    navigate("/");
   };
 
   return (
@@ -46,20 +84,48 @@ function NewItem() {
           onChange={(e) => setDescription(e.target.value)}
         />
         <input
-          placeholder="Image"
-          type="text"
-          onChange={(e) => setImage(e.target.value)}
-        />
-        <input
           placeholder="Price"
           type="number"
           onChange={(e) => setPrice(e.target.value)}
         />
-        <input
-          placeholder="Color"
-          type="text"
-          onChange={(e) => setColor(e.target.value)}
+
+        <Select
+          options={options}
+          onChange={(data) => changeColor(data.value)}
         />
+
+        <div className="image-selector-block">
+          {!image ? (
+            <div className="">
+              {" "}
+              <h4>Select an image from the list:</h4>
+              <div className="image-selector">
+                {images.map((image) => {
+                  return (
+                    <div className="" key={image}>
+                      <img
+                        src={image}
+                        alt="image"
+                        className="img-selector"
+                        onClick={() => selectImage(image)}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ) : (
+            <div className="" key={image}>
+              <h4>Click on the picture to change it</h4>
+              <img
+                src={image}
+                alt="image"
+                className="img-selector"
+                onClick={() => selectImage(image)}
+              />
+            </div>
+          )}
+        </div>
         <input type="submit" value="Add Item" />
       </form>
     </div>
