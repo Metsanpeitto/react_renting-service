@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { getItems } from "../../redux/api/api";
 import { useNavigate } from "react-router-dom";
+import styles from './Details.module.scss';
 
 const Details = () => {
 
@@ -30,12 +31,16 @@ const Details = () => {
 
   if (itemDisplay) {
     return (
-      <div>
-        <div>
+      <div className={styles.container}>
+
+        <div className={styles.image}>
           <img src={itemDisplay.image} alt="image" />
-          <h1>{itemDisplay.title}</h1>
+        </div>
+
+        <div className={styles.info}>
+          <h1>{itemDisplay.name}</h1>
           <h5>{itemDisplay.description}</h5>
-          <h5>{itemDisplay.price}</h5>
+          <h5>Price: ${itemDisplay.price}</h5>
 
           <Link
             to={{
@@ -45,10 +50,10 @@ const Details = () => {
           >
             Reserve
           </Link>
-
-          <button onClick={() => navigate('/')}>Go Back</button>
-          
         </div>
+
+        <button className={styles.back} onClick={() => navigate('/')}>&lt;</button>
+
       </div>
     );
   } else {

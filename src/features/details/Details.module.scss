@@ -1,0 +1,58 @@
+@import '../../app/scss/flex';
+
+.container {
+  @extend %flex-row;
+  @extend %justify-center;
+  @extend %align-center;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+
+  .image {
+    @extend %flex-col;
+    height: 50vh;
+    @extend %justify-end;
+
+    img {
+      width: 80vw;
+    }
+  }
+
+  .info {
+    @extend %flex-col;
+    height: 50vh;
+    gap: 10px;
+  }
+  
+  .back {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-color: #97bf0f;
+    border: none;
+    padding: 10px 15px 10px 10px;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+  }
+
+  a {
+    margin-top: 10px;
+    background-color: #97bf0f;
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 80vw;
+    // height: 100vh;
+  }
+}
