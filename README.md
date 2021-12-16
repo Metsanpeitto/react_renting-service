@@ -6,6 +6,7 @@
  In this task, we will be working with the real live data from the 
 Microverse_final_project API. 
 
+
 Our task is to build a web application for a boat renting company. 
 
 The application requires authentication by the user. 
