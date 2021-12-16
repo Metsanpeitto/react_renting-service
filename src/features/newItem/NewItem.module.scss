@@ -8,7 +8,7 @@
   padding: 50px;
   height: 100vh;
   width: 100vw;
-  gap: 30px;
+  gap: 10px;
   background: url("https://www.pngplay.com/wp-content/uploads/2/Boat-Transparent-Background.png");
   background-size: cover;
   background-position: center;
@@ -18,7 +18,11 @@
   form {
     @extend %flex-col;
 
-    gap: 30px;
+    gap: 10px;
+
+    h4 {
+      text-align: center;
+    }
 
     input {
       border: 2px solid white;
@@ -46,6 +50,12 @@
 @media (min-width: 768px) {
   .container {
     width: 80vw;
+    height: 100vh;
+    gap: 30px;
+
+    form {
+      gap: 30px;
+    }
   }
 }
 
@@ -53,4 +63,10 @@
     border: 2px solid white;
     border-radius: 25px;
     min-width: 344px;
-    padding: 24px;}
+    padding: 24px;
+
+    .image-selector {
+      height: 25vh;
+      overflow-y: scroll;
+    }
+  }

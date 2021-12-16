@@ -103,8 +103,8 @@ function NewItem() {
           {!image ? (
             <div className="">
               {" "}
-              <h4>Select an image from the list:</h4>
-              <div className="image-selector">
+              <h4>Select an image from the list</h4>
+              <div className={styles["image-selector"]}>
                 {images.map((image) => {
                   return (
                     <div className="" key={image}>
