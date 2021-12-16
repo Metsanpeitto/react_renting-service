@@ -1,7 +1,5 @@
-/* eslint-disable */
-
 import axios from 'axios';
-import { toast } from "react-toastify";
+import { toast } from 'react-toastify';
 
 const url = 'https://frozen-dusk-66130.herokuapp.com/reservations';
 
@@ -10,7 +8,7 @@ const getReservations = async () => axios.get(`${url}`).then((result) => {
   if (result.status === 200) {
     reservations = result.data;
   } else {
-    toast.warning("There was an error");
+    toast.warning('There was an error');
   }
   return reservations;
 });
@@ -32,17 +30,14 @@ const addReservation = async (reservation) => {
   const response = axios
     .post(`${url}`, body, config)
     .then((res) => {
-      console.log(res)
       if (res.status === 201) {
-        toast.success("Reservation created successfullly");
+        toast.success('Reservation created successfullly');
         localStorage.setItem('token', res.headers.authorization);
         return res;
-      } else {
-
-        toast.warning("There was an error");
       }
+      toast.warning('There was an error');
+      return null;
     });
-  
 
   return response;
 };

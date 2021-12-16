@@ -1,23 +1,34 @@
-# microverse_final_project_frontend
+# Microverse final project frontend
 
 ![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 
 
-In this task, we will be working with the real live data from the Microverse_final_project API. Our task is to build a web application for a boat renting company. The application will allow users to book a boat, manage and  display new boats.
+ In this task, we will be working with the real live data from the 
+Microverse_final_project API. 
 
-## Built With 
+
+Our task is to build a web application for a boat renting company. 
+
+The application requires authentication by the user. 
+ No logged in users will have access only to the main page and the
+account one.
+ If the user sings up he can access the reservation new and index
+pages as well.
+ And if the user logs in as administrator, he will have access as 
+well to the item new and delete 
+options.
+
+ In order to login as administrator just press sign in button and
+the app will use the deault values, that has administrator role.
+
+### Built With 
 
 - HTML/CSS
 - React.JS
 - Node.JS
 - Microverse final project rails API
 
-
-### Project Description Video
-
-[Google Drive Link](https://drive.google.com/file/d/1XBqgtK5_6PkkRqze9iCV1zerPhB9IeM2/view?usp=sharing)
-
-## Getting Started
+### Getting Started
 
 If you want a copy of this file go to the github repository and download it from there
 
@@ -48,13 +59,15 @@ npm install
 npm start
 ```
 
+
 ### Verify linters
 
 ```cmd
 npx eslint .
 npx stylelint "**/*.{css,scss}"
 ```
-- Autofix linters errors
+
+### Autofix linters errors
 
 ```cmd
 npx eslint . --fix
@@ -62,31 +75,15 @@ npx stylelint "**/*.{css,scss}" --fix
 ```
 
 
-## To run jest testnpm start
-
-```cmd
-npm run test
-```
-
-If you are non a technical person you can download the zip file.
-
-- To do that you have to go to the green button that says 'Code' and then press on it.
-- Choose the option 'Download Zip' and wait until it download.
-- Then you need to decompress it.
-- You will need to have Zip compress file software installed in your computer. If you don't have it you can download it from here
-  [`https://www.7-zip.org/download.html`](https://www.7-zip.org/download.html)
-- Do double click on the Capstone-1.zip and choose a folder where to place all teh decompressed files.
-- Once you are done decompressing, you can open the created folder.
-- In it you can double click on the index.html file and choose a browser to open it (For example google Chrome Browser).
-- Now you should be able to see the project.
-- Remember to use the mouse to navigate through the website. Also you can use the keys 'arrow up' and 'arrow down' of your keyboard
-  to scroll up and down. 
-
-
-
 ### Prerequisites
 
 - Node.JS
+
+### Design
+
+[The design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) provided by [Murat Korkmaz](https://www.behance.net/muratk) 
+
+
 
 
 ## Authors

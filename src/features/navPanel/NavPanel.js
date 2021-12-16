@@ -1,15 +1,13 @@
-/* eslint-disable */
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import styles from './NavPanel.module.scss';
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import GoogleIcon from '@mui/icons-material/Google';
 import PinterestIcon from '@mui/icons-material/Pinterest';
+import styles from './NavPanel.module.scss';
 
 const NavPanel = ({ onNavClick }) => {
   const user = useSelector((state) => state.userReducer.user);
@@ -41,22 +39,8 @@ const NavPanel = ({ onNavClick }) => {
               onClick={() => handleClick()}
               className={styles.username}
             >
-              {user.name} 
+              {user.name}
             </NavLink>
-          </>
-        ) : (
-
-            <NavLink
-              to={`${process.env.PUBLIC_URL}/user`}
-              onClick={() => handleClick()}
-            >
-              ACCOUNT
-            </NavLink>
-
-        )}
-
-        {user.role === 'admin' ? (
-          <>
             <NavLink
               to={`${process.env.PUBLIC_URL}/new_reservation/0`}
               onClick={() => handleClick()}
@@ -69,6 +53,21 @@ const NavPanel = ({ onNavClick }) => {
             >
               MY RESERVATIONS
             </NavLink>
+          </>
+        ) : (
+
+          <NavLink
+            to={`${process.env.PUBLIC_URL}/user`}
+            onClick={() => handleClick()}
+          >
+            ACCOUNT
+          </NavLink>
+
+        )}
+
+        {user.role === 'admin' ? (
+          <>
+
             <NavLink
               to={`${process.env.PUBLIC_URL}/add`}
               onClick={() => handleClick()}

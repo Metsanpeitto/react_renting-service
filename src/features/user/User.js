@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
@@ -50,14 +49,14 @@ const User = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 type="email"
                 value={email}
-                className={styles.input} 
+                className={styles.input}
               />
               <input
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
                 type="password"
                 value={password}
-                className={styles.input} 
+                className={styles.input}
               />
               <input type="submit" value="Sign In" className={styles.button} />
               <Link

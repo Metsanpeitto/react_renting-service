@@ -1,12 +1,9 @@
-/* eslint-disable */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import DateTimePicker from 'react-datetime-picker';
 import Select from 'react-select';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import { addReservation } from '../../redux/api/api';
-import { getItems } from "../../redux/api/api";
+import { useParams, useNavigate } from 'react-router-dom';
+import { addReservation, getItems } from '../../redux/api/api';
 
 import styles from '../../app/scss/Form.module.scss';
 
@@ -15,40 +12,40 @@ function NewReservation() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.userReducer.user);
   const items = useSelector((state) => state.itemsReducer.items);
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState('');
   const [value, setDate] = useState(new Date());
-  const [itemId, setItemId] = useState("");
+  const [itemId, setItemId] = useState('');
   const [receivedItemId, setReceivedItemId] = useState(null);
   const [optionsReady, setOptionsReady] = useState(false);
   const [options, setOptions] = useState([]);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const submitReservationToStore = () => {
     const newReservation = {
       userId: user.id,
       itemId,
       city,
-      value
+      value,
     };
 
     if (newReservation.userId && itemId && city && value) {
       dispatch(addReservation(newReservation));
-      dispatch(getItems())
-      navigate('/')
+      dispatch(getItems());
+      navigate('/');
     }
   };
 
-  useEffect((props) => {
-    if (items.length > 0 && optionsReady == false) {
-      items.forEach(item => {
-        options.push({ value: item.id, label: `${item.name}` })
+  useEffect(() => {
+    if (items.length > 0 && optionsReady === false) {
+      items.forEach((item) => {
+        options.push({ value: item.id, label: `${item.name}` });
         setOptionsReady(true);
       });
       setOptions(options);
     }
 
-    if (itemId == '' && param.itemId) {
-      setItemId(param.itemId)
+    if (itemId === '' && param.itemId) {
+      setItemId(param.itemId);
       setReceivedItemId(true);
     }
   });
@@ -66,10 +63,9 @@ function NewReservation() {
         />
         <DateTimePicker className={styles.input} onChange={setDate} value={value} required />
 
-        {receivedItemId ?
-          <Select className={styles.dropdown} options={options} onChange={(data) => setItemId(data.value)} />
-          : null
-        }
+        {!receivedItemId
+          ? <Select options={options} onChange={(data) => setItemId(data.value)} />
+          : null}
 
         <button onClick={() => submitReservationToStore} className={styles.input} type="submit">Reserve Item</button>
       </form>
