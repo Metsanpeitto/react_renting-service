@@ -68,3 +68,13 @@
 .img-selector {
   width: 260px;
 }
+
+input {
+  &[type="submit"] {
+    cursor: pointer;
+  }
+}
+
+button {
+  cursor: pointer;
+}
