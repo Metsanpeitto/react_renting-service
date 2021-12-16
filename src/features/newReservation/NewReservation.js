@@ -6,9 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { addReservation } from '../../redux/api/api';
-/* eslint-disable */
-
-import styles from './NewReservation.module.scss';
+import styles from '../../app/scss/Form.module.scss';
 
 function NewReservation() {
   const param = useParams();

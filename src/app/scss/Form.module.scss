@@ -20,11 +20,19 @@
 
     gap: 30px;
 
-    input {
+    .input {
       border: 2px solid white;
       border-radius: 50px;
       padding: 10px;
       font-weight: bold;
+
+      input, select, button {
+        color: white;
+      }
+
+      line, rect {
+        stroke: white;
+      }
 
       &:not([type="submit"]) {
         background-color: #97bf0f;
