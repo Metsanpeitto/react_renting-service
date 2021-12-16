@@ -1,5 +1,4 @@
 /* eslint-disable */
-
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
@@ -10,8 +9,8 @@ const User = () => {
   const userR = useSelector((state) => state.userReducer.user);
   const dispatch = useDispatch();
   const [user, setUser] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('as@as.com');
+  const [password, setPassword] = useState('123456');
   const navigate = useNavigate();
 
   const submitSignOut = (e) => {
@@ -27,7 +26,6 @@ const User = () => {
     if (user === '' && userR[0]) {
       setUser(userR);
     }
-    const token = localStorage.getItem('token');
   });
 
   const submitSignIn = (e) => {
@@ -52,14 +50,16 @@ const User = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 type="email"
                 value={email}
+                className={styles.input} 
               />
               <input
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
                 type="password"
                 value={password}
+                className={styles.input} 
               />
-              <input type="submit" value="Sign In" />
+              <input type="submit" value="Sign In" className={styles.button} />
               <Link
                 className={styles.button}
                 to={`${process.env.PUBLIC_URL}/sign_up`}
@@ -74,7 +74,7 @@ const User = () => {
           <>
             <h2>ACCOUNT</h2>
             <form onSubmit={() => submitSignOut()}>
-              <input type="submit" value="Sign Out" />
+              <input className={styles.input} type="submit" value="Sign Out" />
             </form>
           </>
         )}

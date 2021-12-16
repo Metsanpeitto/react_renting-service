@@ -1,4 +1,4 @@
-@import './app/scss/flex';
+@import "./app/scss/flex";
 
 * {
   margin: 0;
@@ -15,6 +15,16 @@
 
   .react-datetime-picker__wrapper {
     border: none;
+
+    option {
+      color: black;
+    }
+  }
+
+  .react-calendar {
+    & * {
+      color: black !important;
+    }
   }
 
   .css-1s2u09g-control,
@@ -22,6 +32,11 @@
     border: 2px solid white;
     border-radius: 50px;
     background-color: transparent;
+  }
+
+  .css-qc6sy-singleValue {
+    color: white;
+    font-weight: bold;
   }
 }
 
@@ -40,4 +55,25 @@
 
 .close {
   right: 10px;
+}
+
+.img-selector-block {
+  border: 2px solid white;
+  border-radius: 25px;
+  padding: 4%;
+  width: 300px;
+}
+
+.img-selector {
+  width: 260px;
+}
+
+input {
+  &[type="submit"] {
+    cursor: pointer;
+  }
+}
+
+button {
+  cursor: pointer;
 }

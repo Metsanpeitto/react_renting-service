@@ -1,3 +1,5 @@
+@import '../../../app/scss/flex';
+
 .slider {
   width: 100vw;
   padding: 50px 10px;
@@ -5,6 +7,23 @@
 
 a {
   text-decoration: none;
+}
+
+.social {
+  @extend %flex-row;
+  @extend %justify-center;
+
+  margin-top: 10px;
+  gap: 10px;
+
+  svg {
+    width: 25px;
+    height: auto;
+    color: grey;
+    border: 2px solid grey;
+    border-radius: 50%;
+    padding: 2.5px;
+  }
 }
 
 @media (min-width: 768px) {

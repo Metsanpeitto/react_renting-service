@@ -61,6 +61,7 @@ npx eslint . --fix
 npx stylelint "**/*.{css,scss}" --fix
 ```
 
+
 ## To run jest testnpm start
 
 ```cmd
@@ -80,6 +81,7 @@ If you are non a technical person you can download the zip file.
 - Now you should be able to see the project.
 - Remember to use the mouse to navigate through the website. Also you can use the keys 'arrow up' and 'arrow down' of your keyboard
   to scroll up and down. 
+
 
 
 ### Prerequisites

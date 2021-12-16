@@ -1,18 +1,20 @@
-/* eslint-disable */
-
-import './App.scss';
 import MenuIcon from '@mui/icons-material/Menu';
 import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
+import { ToastContainer } from 'react-toastify';
 import NavPanel from './features/navPanel/NavPanel';
 import Main from './features/main/Main';
 import NewItem from './features/newItem/NewItem';
-import ReserveItem from './features/reserveItem/ReserveItem';
+import NewReservation from './features/newReservation/NewReservation';
 import User from './features/user/User';
 import SignUp from './features/user/SignUp';
 import MyReservations from './features/myReservations/MyReservations';
 import Details from './features/details/Details';
+import Delete from './features/deleteItem/DeleteItem';
+
+import 'react-toastify/dist/ReactToastify.css';
+import './App.scss';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -49,7 +51,7 @@ function App() {
 
   return (
     <div className="App">
-
+      <ToastContainer />
       {(mobileMenuOpen) || (mobileView && (
         <>
           <MenuIcon className="menu open" onClick={() => toggleMenu()} />
@@ -58,10 +60,13 @@ function App() {
             <Route exact path="/" element={<Main />} />
             <Route path="/details/:itemName" element={<Details />} />
             <Route path="/add" element={<NewItem />} />
-            <Route path="/reserve" element={<ReserveItem />} />
+
+            <Route path="/new_reservation/:itemId" element={<NewReservation />} />
+
             <Route path="/my_reservations" element={<MyReservations />} />
             <Route path="/user" element={<User />} />
             <Route path="/sign_up" element={<SignUp />} />
+            <Route path="/delete" element={<Delete />} />
           </Routes>
         </>
       ))}
@@ -81,10 +86,11 @@ function App() {
             <Route exact path="/" element={<Main />} />
             <Route path="/details/:itemName" element={<Details />} />
             <Route path="/add" element={<NewItem />} />
-            <Route path="/reserve" element={<ReserveItem />} />
+            <Route path="/new_reservation/:itemId" element={<NewReservation />} />
             <Route path="/my_reservations" element={<MyReservations />} />
             <Route path="/user" element={<User />} />
             <Route path="/sign_up" element={<SignUp />} />
+            <Route path="/delete" element={<Delete />} />
           </Routes>
         </>
       )}
