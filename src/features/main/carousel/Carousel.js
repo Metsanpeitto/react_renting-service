@@ -33,27 +33,23 @@ const Carousel = ({ items }) => {
   };
 
   return (
-    <>
-      <Slider {...settings} className={styles.slider}>
+    <Slider {...settings} className={styles.slider} key="slider">
 
-        {
-          items.map((item) => (
-            <>
-              <Link
-                key={`${item.id}`}
-                to={{
-                  pathname: `/details/${item.name}`,
-                }}
-                data={item}
-              >
-                <ItemCard key={item.name} item={item} />
-              </Link>
-            </>
-          )
-        )}
+      {
+        items.map((item) => (
+          <Link
+            key={item.id}
+            to={{
+              pathname: `/details/${item.name}`,
+            }}
+            data={item}
+          >
+            <ItemCard key={item.id} item={item} />
+          </Link>
+        )
+      )}
 
-      </Slider>
-    </>
+    </Slider>
   );
 };
 
