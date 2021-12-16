@@ -39,8 +39,9 @@ const NavPanel = ({ onNavClick }) => {
             <NavLink
               to={`${process.env.PUBLIC_URL}/user`}
               onClick={() => handleClick()}
+              className={styles.username}
             >
-              {user.name}
+              {user.name} 
             </NavLink>
           </>
         ) : (
