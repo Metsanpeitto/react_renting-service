@@ -42,6 +42,7 @@
 
     .social {
       @extend %flex-row;
+
       gap: 10px;
 
       img {

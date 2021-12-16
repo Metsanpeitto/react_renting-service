@@ -8,14 +8,14 @@
   width: 100vw;
   height: 100vh;
   padding: 50px 10px;
-
   background-color: #97bf0f;
-
   color: white;
 
   .cards {
     overflow-y: scroll;
+
     @extend %flex-col;
+
     gap: 20px;
     padding: 10px;
   }
@@ -26,7 +26,6 @@
     padding: 10px;
     text-align: center;
   }
-
 }
 
 @media (min-width: 768px) {
