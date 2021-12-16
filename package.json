@@ -1,6 +1,5 @@
 {
   "proxy": "https://frozen-dusk-66130.herokuapp.com/:3000",
-  "homepage": "https://dry-peak-20261.herokuapp.com",
   "name": "microverse_final_project_front",
   "version": "0.1.0",
   "private": true,
@@ -33,16 +32,11 @@
     "slick-carousel": "^1.8.1",
     "web-vitals": "^1.0.1"
   },
-  "engines": {
-    "npm": "8.1.4",
-    "node": "16.13.0"
-  },
   "scripts": {
-    "start": "serve -s build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

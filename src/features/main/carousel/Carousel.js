@@ -1,20 +1,17 @@
 /* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable */
-
-
 import React from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import ItemCard from '../ItemCard';
 import NextArrow from './NextArrow';
 import PrevArrow from './PrevArrow';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './Carousel.module.scss';
-import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Carousel = ({ items }) => {
   const settings = {
@@ -57,8 +54,8 @@ const Carousel = ({ items }) => {
               <a href="https://instagram.com" aria-label="instagram"><InstagramIcon /></a>
             </div>
           </div>
-        )
-      )}
+        ))
+}
 
     </Slider>
   );

@@ -1,7 +1,5 @@
-/* eslint-disable */
-
 import axios from 'axios';
-import { toast } from "react-toastify";
+import { toast } from 'react-toastify';
 
 const url = 'https://frozen-dusk-66130.herokuapp.com/';
 
@@ -15,12 +13,12 @@ const signIn = async (user) => {
     })
     .then((res) => {
       if (res.status === 201) {
-        toast.success("User signed in successfullly");
+        toast.success('User signed in successfullly');
         localStorage.setItem('token', res.headers.authorization);
         return res;
-      } else {
-        toast.warning("There was an error");
       }
+      toast.danger('There was an error');
+      return null;
     });
   return response;
 };
@@ -33,12 +31,12 @@ const signUp = async (user) => axios.post(`${url}/register`, {
     password_confirmation: user.passwordConfirmation,
   },
 }).then((res) => {
-  console.log(res);
   if (res.status === 201) {
-    toast.success("User signed up successfullly");
-  } else {
-    toast.warning("There was an error");
+    toast.success('User signed up successfullly');
+    return null;
   }
+  toast.danger('There was an error');
+  return null;
 });
 
 const signOut = async (user) => {
@@ -50,14 +48,13 @@ const signOut = async (user) => {
       },
     })
     .then((res) => {
-      console.log(res)
       if (res.status === 200) {
         localStorage.setItem('token', null);
-        toast.success("User signed out successfullly");
+        toast.success('User signed out successfullly');
         return res;
-      } else {
-        toast.warning("There was an error");
       }
+      toast.danger('There was an error');
+      return null;
     });
   return response;
 };
