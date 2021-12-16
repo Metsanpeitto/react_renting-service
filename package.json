@@ -1,0 +1,19 @@
+{
+  "name": "microverse_final_project_front",
+  "version": "1.0.0",
+  "description": "README",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Metsanpeitto/microverse_final_project_front.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Metsanpeitto/microverse_final_project_front/issues"
+  },
+  "homepage": "https://github.com/Metsanpeitto/microverse_final_project_front#readme"
+}
