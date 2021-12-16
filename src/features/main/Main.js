@@ -1,11 +1,9 @@
-/* eslint-disable */
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getItems } from '../../redux/api/api';
 
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getItems } from "../../redux/api/api";
-
-import Carousel from "./carousel/Carousel";
-import styles from "./Main.module.scss";
+import Carousel from './carousel/Carousel';
+import styles from './Main.module.scss';
 
 const Main = () => {
   const items = useSelector((state) => state.itemsReducer.items);
