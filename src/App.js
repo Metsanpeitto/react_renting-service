@@ -11,7 +11,6 @@ import User from './features/user/User';
 import SignUp from './features/user/SignUp';
 import MyReservations from './features/myReservations/MyReservations';
 import Details from './features/details/Details';
-import MyReservations from './features/myReservations/MyReservations';
 import Delete from './features/deleteItem/DeleteItem';
 
 import 'react-toastify/dist/ReactToastify.css';
