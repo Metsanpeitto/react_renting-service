@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { addReservation } from '../../redux/api/api';
 import { getItems } from "../../redux/api/api";
 
-import styles from './NewReservation.module.scss';
+import styles from '../../app/scss/Form.module.scss';
 
 function NewReservation() {
   const param = useParams();
@@ -67,7 +67,7 @@ function NewReservation() {
         <DateTimePicker className={styles.input} onChange={setDate} value={value} required />
 
         {receivedItemId ?
-          <Select options={options} onChange={(data) => setItemId(data.value)} />
+          <Select className={styles.dropdown} options={options} onChange={(data) => setItemId(data.value)} />
           : null
         }
 

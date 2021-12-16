@@ -28,6 +28,7 @@
 
       input, select, button {
         color: white;
+        background-color: transparent;
       }
 
       line, rect {
@@ -47,6 +48,10 @@
         background-color: white;
         color: #97bf0f;
       }
+    }
+
+    .dropdown {
+      color: black;
     }
 
     .button {

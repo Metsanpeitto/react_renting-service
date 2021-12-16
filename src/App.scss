@@ -15,6 +15,17 @@
 
   .react-datetime-picker__wrapper {
     border: none;
+
+    option {
+      color: black;
+    }
+  }
+
+  .react-calendar {
+
+    & * {
+      color: black !important;
+    }
   }
 
   .css-1s2u09g-control,
@@ -22,6 +33,11 @@
     border: 2px solid white;
     border-radius: 50px;
     background-color: transparent;
+  }
+
+  .css-qc6sy-singleValue {
+    color: white;
+    font-weight: bold;
   }
 }
 
