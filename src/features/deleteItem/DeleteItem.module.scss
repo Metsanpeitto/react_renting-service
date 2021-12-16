@@ -9,9 +9,7 @@
   height: 100vh;
   padding: 50px 10px;
   gap: 10px;
-
   background-color: #97bf0f;
-
   color: white;
 
   .card {
@@ -19,6 +17,7 @@
     padding: 10px;
     text-align: center;
     gap: 5px;
+
     @extend %flex-col;
 
     button {
@@ -34,7 +33,6 @@
       font-family: Arial, sans-serif;
     }
   }
-
 }
 
 @media (min-width: 768px) {
