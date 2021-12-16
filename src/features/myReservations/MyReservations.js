@@ -20,6 +20,7 @@ const MyReservations = () => {
   return (
     <div className={styles.container}>
       <h2>MY RESERVATIONS</h2>
+      <div className={styles.cards}>
       {
         reservations.map(reserve => {
           return (
@@ -30,6 +31,7 @@ const MyReservations = () => {
           )
         })
       }
+      </div>
     </div>
   )
 };

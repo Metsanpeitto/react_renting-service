@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getItems, deleteItem } from '../../redux/api/api';
-import { useNavigate } from "react-router-dom";
+import styles from './DeleteItem.module.scss';
 
 const DeleteItem = () => {
     const user = useSelector((state) => state.userReducer.user);
@@ -28,13 +28,12 @@ const DeleteItem = () => {
 
     return (
         <>
-            {user.id ? <div>
+            {user.id ? <div className={styles.container}>
                 {calledItems ?
                     calledItems.map(item => {
                         return (
-                            <div>
+                            <div className={styles.card}>
                                 <h4 >{item.name}</h4>
-                                -
                                 <button id={item.id} onClick={(e) => submitDeleteToStore(e)}>Delete Item</button>
                             </div>
                         )
