@@ -29,6 +29,10 @@
     "slick-carousel": "^1.8.1",
     "web-vitals": "^1.0.1"
   },
+  "engines": {
+    "npm": "8.1.4",
+    "node": "16.13.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
