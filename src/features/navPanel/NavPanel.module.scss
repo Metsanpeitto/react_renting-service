@@ -14,7 +14,7 @@
     height: 20vh;
 
     img {
-      width: 100px;
+      width: 200px;
       height: auto;
     }
   }
@@ -38,6 +38,7 @@
 
     .social {
       @extend %flex-row;
+      gap: 10px;
 
       img {
         width: 25px;
