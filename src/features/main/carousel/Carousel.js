@@ -12,6 +12,9 @@ import PrevArrow from './PrevArrow';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './Carousel.module.scss';
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Carousel = ({ items }) => {
   const settings = {
@@ -37,15 +40,23 @@ const Carousel = ({ items }) => {
 
       {
         items.map((item) => (
-          <Link
-            key={item.id}
-            to={{
-              pathname: `/details/${item.name}`,
-            }}
-            data={item}
-          >
-            <ItemCard key={item.id} item={item} />
-          </Link>
+          <div key={item.id}>
+            <Link
+              key={item.id}
+              to={{
+                pathname: `/details/${item.name}`,
+              }}
+              data={item}
+            >
+              <ItemCard key={item.id} item={item} />
+            </Link>
+
+            <div className={styles.social}>
+              <a href="https://facebook.com" aria-label="facebook"><FacebookRoundedIcon /></a>
+              <a href="https://twitter.com" aria-label="twitter"><TwitterIcon /></a>
+              <a href="https://instagram.com" aria-label="instagram"><InstagramIcon /></a>
+            </div>
+          </div>
         )
       )}
 
