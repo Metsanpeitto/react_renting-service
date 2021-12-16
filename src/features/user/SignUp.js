@@ -35,26 +35,30 @@ const SignUp = () => {
             onChange={(e) => setName(e.target.value)}
             type="text"
             value={name}
+            className={styles.input} 
           />
           <input
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
             type="email"
             value={email}
+            className={styles.input} 
           />
           <input
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             value={password}
+            className={styles.input} 
           />
           <input
             placeholder="Password Confirmation"
             onChange={(e) => setPasswordConfirmation(e.target.value)}
             type="password"
             value={passwordConfirmation}
+            className={styles.input} 
           />
-          <input type="submit" value="Sign Up" />
+          <input type="submit" value="Sign Up" className={styles.button}  />
         </form>
       </div>
     )

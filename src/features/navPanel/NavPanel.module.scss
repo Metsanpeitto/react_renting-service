@@ -11,10 +11,10 @@
     @extend %flex-col;
     @extend %align-center;
 
-    height: 20vh;
+    height: 30vh;
 
     img {
-      width: 100px;
+      width: 200px;
       height: auto;
     }
   }
@@ -29,6 +29,10 @@
       color: black;
       padding: 10px;
     }
+
+    .username {
+      text-transform: uppercase;
+    }
   }
 
   footer {
@@ -38,6 +42,7 @@
 
     .social {
       @extend %flex-row;
+      gap: 10px;
 
       img {
         width: 25px;

@@ -1,7 +1,4 @@
 import PropTypes from 'prop-types';
-import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import InstagramIcon from '@mui/icons-material/Instagram';
 import styles from './ItemCard.module.scss';
 
 const ItemCard = ({ item }) => (
@@ -16,12 +13,6 @@ const ItemCard = ({ item }) => (
     <div className={styles.divider} />
 
     <p>{ item.description }</p>
-
-    <div className={styles.social}>
-      <a href="https://facebook.com" aria-label="facebook"><FacebookRoundedIcon /></a>
-      <a href="https://twitter.com" aria-label="twitter"><TwitterIcon /></a>
-      <a href="https://instagram.com" aria-label="instagram"><InstagramIcon /></a>
-    </div>
 
   </div>
 );
