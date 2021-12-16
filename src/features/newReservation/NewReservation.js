@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { addReservation } from '../../redux/api/api';
-/* eslint-disable */
+import { getItems } from "../../redux/api/api";
 
 import styles from './NewReservation.module.scss';
 
@@ -33,25 +33,21 @@ function NewReservation() {
 
     if (newReservation.userId && itemId && city && value) {
       dispatch(addReservation(newReservation));
+      dispatch(getItems())
       navigate('/')
     }
-
   };
 
   useEffect((props) => {
-    console.log(props)
     if (items.length > 0 && optionsReady == false) {
       items.forEach(item => {
         options.push({ value: item.id, label: `${item.name}` })
-        console.log(item);
         setOptionsReady(true);
       });
       setOptions(options);
     }
 
     if (itemId == '' && param.itemId) {
-      console.log(param)
-      console.log(itemId)
       setItemId(param.itemId)
       setReceivedItemId(true);
     }
@@ -60,9 +56,7 @@ function NewReservation() {
   return (
     <div className={styles.container}>
       <h2>RESERVE ITEM</h2>
-
       <form onSubmit={() => submitReservationToStore()}>
-
         <input
           placeholder="City"
           type="text"
@@ -70,16 +64,14 @@ function NewReservation() {
           onChange={(e) => setCity(e.target.value)}
           required
         />
-
         <DateTimePicker className={styles.input} onChange={setDate} value={value} required />
 
-        {!receivedItemId ?
+        {receivedItemId ?
           <Select options={options} onChange={(data) => setItemId(data.value)} />
           : null
         }
 
         <button onClick={() => submitReservationToStore} className={styles.input} type="submit">Reserve Item</button>
-
       </form>
     </div>
   );

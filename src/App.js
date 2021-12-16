@@ -1,8 +1,8 @@
-import './App.scss';
 import MenuIcon from '@mui/icons-material/Menu';
 import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
+import { ToastContainer } from 'react-toastify';
 import NavPanel from './features/navPanel/NavPanel';
 import Main from './features/main/Main';
 import NewItem from './features/newItem/NewItem';
@@ -12,6 +12,9 @@ import SignUp from './features/user/SignUp';
 import Details from './features/details/Details';
 import MyReservations from './features/myReservations/MyReservations';
 import Delete from './features/deleteItem/DeleteItem';
+
+import 'react-toastify/dist/ReactToastify.css';
+import './App.scss';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -48,7 +51,7 @@ function App() {
 
   return (
     <div className="App">
-
+      <ToastContainer />
       {(mobileMenuOpen) || (mobileView && (
         <>
           <MenuIcon className="menu open" onClick={() => toggleMenu()} />

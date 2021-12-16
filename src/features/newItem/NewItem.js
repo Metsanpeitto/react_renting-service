@@ -99,7 +99,7 @@ function NewItem() {
           onChange={(data) => changeColor(data.value)}
         />
 
-        <div className="image-selector-block">
+        <div className={styles["image-selector-block"]}>
           {!image ? (
             <div className="">
               {" "}

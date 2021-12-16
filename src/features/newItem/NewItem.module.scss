@@ -43,13 +43,14 @@
   }
 }
 
-
-
-
-
 @media (min-width: 768px) {
   .container {
     width: 80vw;
   }
-
 }
+
+.image-selector-block{
+    border: 2px solid white;
+    border-radius: 25px;
+    min-width: 344px;
+    padding: 24px;}

@@ -10,10 +10,10 @@ const MyReservations = () => {
   const [calledReservations, setCalledReservations] = useState(null);
 
   useEffect(() => {
-      if (!calledReservations && reservations.length === 0 && calledReservations !== reservations) {
-          setCalledReservations(true);
-          dispatch(getReservations());
-      }
+    if (!calledReservations && reservations.length === 0 && calledReservations !== reservations) {
+      setCalledReservations(true);
+      dispatch(getReservations());
+    }
   });
 
   return (
