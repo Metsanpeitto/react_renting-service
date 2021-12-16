@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import { addItem } from "../../redux/api/api";
-
 import styles from "./NewItem.module.scss";
 
 function NewItem() {
@@ -97,6 +96,7 @@ function NewItem() {
         <Select
           options={options}
           onChange={(data) => changeColor(data.value)}
+          className={styles.dropdown}
         />
 
         <div className={styles["image-selector-block"]}>
