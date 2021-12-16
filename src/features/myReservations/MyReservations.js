@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getReservations } from '../../redux/api/api';
+import styles from './MyReservations.module.scss';
 
 const MyReservations = () => {
 
@@ -17,20 +18,19 @@ const MyReservations = () => {
   });
 
   return (
-    <>
+    <div className={styles.container}>
+      <h2>MY RESERVATIONS</h2>
       {
         reservations.map(reserve => {
           return (
-            <div>
-              <div>
-                <h4>{reserve.city}</h4>
-                <h4>{reserve.date}</h4>
-              </div>
+            <div className={styles.card}>
+              <h4>{reserve.city}</h4>
+              <h4>{reserve.date}</h4>
             </div>
           )
         })
       }
-    </>
+    </div>
   )
 };
 
