@@ -1,6 +1,7 @@
 {
+  "type": "module",
   "proxy": "http://frozen-dusk-66130.herokuapp.com/:3000",
-  "homepage": "https://dry-peak-20261.herokuapp.com/",
+  "homepage": "https://dry-peak-20261.herokuapp.com/:3001",
   "name": "microverse_final_project_front",
   "version": "0.1.0",
   "private": true,
