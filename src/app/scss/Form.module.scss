@@ -31,6 +31,10 @@
         background-color: transparent;
       }
 
+      button {
+        cursor: pointer;
+      }
+
       line, rect {
         stroke: white;
       }
@@ -47,6 +51,7 @@
       &[type="submit"] {
         background-color: white;
         color: #97bf0f;
+        cursor: pointer;
       }
     }
 
