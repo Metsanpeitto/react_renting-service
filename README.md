@@ -21,33 +21,6 @@ options.
  In order to login as administrator just press sign in button and
 the app will use the deault values, that has administrator role.
 
-### NOTE TO CODE REVIEWERS 
-
- - To test the app locally ensure that the rails backend is running,so this 
-react app uses the address http://locahost:3001
-
- - In order to try the features exclusive for administrator signup with the defaul values.
-Or input: 
-
-```cmd
-email as@as.com
-password: 123456 
-```
-
-### Kanban board screenshot
-![https://i.imgur.com/8G0sWBn.png](https://i.imgur.com/8G0sWBn.png)
-
-### Screenshots
-Main page
-![https://i.imgur.com/ueP13ao.png](https://i.imgur.com/ueP13ao.png)
-
-Signup page
-![https://i.imgur.com/DkMI117.png](https://i.imgur.com/DkMI117.png)
-
-Details page
-![https://i.imgur.com/NOJezfx.png](https://i.imgur.com/NOJezfx.png)
-
-
 ### Built With 
 
 - HTML/CSS
