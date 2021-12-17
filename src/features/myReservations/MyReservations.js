@@ -13,7 +13,7 @@ const MyReservations = () => {
       setCalledReservations(true);
       dispatch(getReservations());
     }
-  },[]);
+  }, []);
 
   return (
     <div className={styles.container}>

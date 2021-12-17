@@ -23,12 +23,10 @@ const deleteItem = async (itemId) => {
   axios.delete(`${url}/${itemId}`, config).then((res) => {
     if (res.status === 302) {
       toast.error('There was an error');
-      console.log(res);
       return res;
     }
     if (res.status === 204) {
       toast.success('Boat deleted successfullly');
-      console.log(res);
       return res;
     }
 

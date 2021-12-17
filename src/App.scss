@@ -8,6 +8,7 @@
 
 .App {
   @extend %flex-row;
+
   .react-datetime-picker__wrapper {
     border: none;
 
