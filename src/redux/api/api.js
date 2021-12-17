@@ -1,9 +1,8 @@
 import reservations from '../../api/reservations';
 import items from '../../api/items';
 import users from '../../api/user';
-
 import {
-  RECEIVE_RESERVATIONS, RECEIVE_USER, RESET_USER, RECEIVE_ITEMS,
+  RECEIVE_RESERVATIONS, RECEIVE_USER, RESET_USER, RECEIVE_ITEMS, REMOVE_ITEM,
 } from '../constants/action-types';
 
 export const receiveReservations = (reservations) => ({
@@ -39,9 +38,14 @@ export const getItems = () => (dispatch) => {
   });
 };
 
-export const deleteItem = (itemId) => (dispatch) => {
-  items.deleteItem(itemId).then((response) => {
-    dispatch(getItems());
+export const removeItem = (itemId) => ({
+  type: REMOVE_ITEM,
+  itemId,
+});
+
+export const deleteItem = (item) => (dispatch) => {
+  items.deleteItem(item).then((response) => {
+    dispatch(removeItem(response));
     return response;
   });
 };
@@ -83,8 +87,7 @@ export const signIn = (user) => (dispatch) => {
 
 export const signOut = (user) => (dispatch) => {
   users.signOut(user).then((response) => {
-    if (response.status === 204) {
-      dispatch(resetUser());
-    }
+    dispatch(resetUser());
+    return response;
   });
 };

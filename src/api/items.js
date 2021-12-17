@@ -8,7 +8,7 @@ const getItems = async () => axios.get(`${url}`).then((result) => {
   if (result.status === 200) {
     items = result.data;
   } else {
-    toast.warning('There was an error');
+    toast.error('There was an error');
   }
   return items;
 });
@@ -20,18 +20,18 @@ const deleteItem = async (itemId) => {
       Authorization: token,
     },
   };
-  axios.delete(`${url}/${itemId}`, config).then((res) => {
+  const response = axios.delete(`${url}/${itemId}`, config).then((res) => {
+    let status = null;
     if (res.status === 302) {
       toast.error('There was an error');
-      return res;
     }
     if (res.status === 204) {
       toast.success('Boat deleted successfullly');
-      return res;
+      status = itemId;
     }
-
-    return null;
+    return status;
   });
+  return response;
 };
 
 const addItem = async (item) => {
@@ -56,7 +56,7 @@ const addItem = async (item) => {
         toast.success('Boat added successfullly');
         return res;
       }
-      toast.danger('There was an error');
+      toast.error('There was an error');
       return null;
     });
   return response;

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const url = 'https://frozen-dusk-66130.herokuapp.com/';
+const url = 'https://frozen-dusk-66130.herokuapp.com';
 
 const signIn = async (user) => {
   const response = await axios.post(`${url}/login`,
@@ -17,7 +17,7 @@ const signIn = async (user) => {
         localStorage.setItem('token', res.headers.authorization);
         return res;
       }
-      toast.danger('There was an error');
+      toast.error('There was an error');
       return null;
     });
   return response;
@@ -35,7 +35,7 @@ const signUp = async (user) => axios.post(`${url}/register`, {
     toast.success('User signed up successfullly');
     return null;
   }
-  toast.danger('There was an error');
+  toast.error('There was an error');
   return null;
 });
 
@@ -53,7 +53,7 @@ const signOut = async (user) => {
         toast.success('User signed out successfullly');
         return res;
       }
-      toast.danger('There was an error');
+      toast.error('There was an error');
       return null;
     });
   return response;

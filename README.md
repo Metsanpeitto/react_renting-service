@@ -21,6 +21,10 @@ options.
  In order to login as administrator just press sign in button and
 the app will use the deault values, that has administrator role.
 
+### Deployed App
+
+[Front end app](https://friendly-hugle-cbed27.netlify.app/)
+
 ### Screenshots
 Main page
 ![https://i.imgur.com/ueP13ao.png](https://i.imgur.com/ueP13ao.png)
@@ -45,11 +49,6 @@ Details page
 If you want a copy of this file go to the github repository and download it from there
 
 - [`git clone https://github.com/Metsanpeitto/microverse_final_project_frontend`](https://github.com/Metsanpeitto/microverse_final_project_frontend)
-
-
-### Live
-
-[Live](https://github.com/Metsanpeitto/microverse_final_project_frontend/)
 
 
 ### Setup

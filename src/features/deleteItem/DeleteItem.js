@@ -19,13 +19,14 @@ const DeleteItem = () => {
   }, []);
 
   useEffect(() => {
-    setCalledItems(items);
+    if (items !== calledItems) {
+      setCalledItems(items);
+    }
   }, [items]);
 
   const submitDeleteToStore = (e) => {
     const itemId = e.currentTarget.id;
     dispatch(deleteItem(itemId));
-    dispatch(getItems());
   };
 
   return (

@@ -44,7 +44,7 @@ function NewReservation() {
       setOptions(options);
     }
 
-    if (itemId === '' && param.itemId) {
+    if (itemId === '' && param.itemId === '0') {
       setItemId(param.itemId);
       setReceivedItemId(true);
     }
@@ -63,7 +63,7 @@ function NewReservation() {
         />
         <DateTimePicker className={styles.input} onChange={setDate} value={value} required />
 
-        {!receivedItemId
+        {receivedItemId
           ? <Select options={options} onChange={(data) => setItemId(data.value)} />
           : null}
 

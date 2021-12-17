@@ -1,11 +1,7 @@
-import { ADD_ITEM, RECEIVE_ITEMS } from '../constants/action-types';
+/* eslint-disable */
+import { ADD_ITEM, RECEIVE_ITEMS, REMOVE_ITEM } from '../constants/action-types';
 
 const initialState = { items: [] };
-
-export const addItem = (payload) => ({
-  type: ADD_ITEM,
-  payload,
-});
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -16,6 +12,18 @@ const reducer = (state = initialState, action) => {
     case RECEIVE_ITEMS: {
       const { items } = action;
       return { items };
+    }
+    case REMOVE_ITEM: {
+      const { itemId } = action;
+      const items = [...state.items];
+      const newItems = []
+      items.map((i) => {
+        if (String(i.id) !== itemId) {
+          newItems.push(i);
+        }
+      });
+
+      return { ...state, newItems };
     }
 
     default:

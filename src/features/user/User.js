@@ -72,7 +72,7 @@ const User = () => {
         : (
           <>
             <h2>ACCOUNT</h2>
-            <form onSubmit={() => submitSignOut()}>
+            <form onSubmit={(e) => submitSignOut(e)}>
               <input className={styles.input} type="submit" value="Sign Out" />
             </form>
           </>
