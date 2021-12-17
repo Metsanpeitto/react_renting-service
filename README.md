@@ -21,9 +21,13 @@ options.
  In order to login as administrator just press sign in button and
 the app will use the deault values, that has administrator role.
 
-### Deployed App
 
-[Front end app](https://friendly-hugle-cbed27.netlify.app/)
+### Deployed Apps
+
+[Frontend](https://friendly-hugle-cbed27.netlify.app/my_reservations)
+[Backend](https://frozen-dusk-66130.herokuapp.com/api-docs/index.html)
+
+=======
 
 ### Screenshots
 Main page
@@ -93,8 +97,6 @@ npx stylelint "**/*.{css,scss}" --fix
 ### Design
 
 [The design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) provided by [Murat Korkmaz](https://www.behance.net/muratk) 
-
-
 
 
 ## Authors
