@@ -1,5 +1,6 @@
 {
   "proxy": "https://frozen-dusk-66130.herokuapp.com/:3000",
+  "homepage": "https://friendly-hugle-cbed27.netlify.app/",
   "name": "microverse_final_project_front",
   "version": "0.1.0",
   "private": true,
