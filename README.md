@@ -21,6 +21,18 @@ options.
  In order to login as administrator just press sign in button and
 the app will use the deault values, that has administrator role.
 
+### Screenshots
+Main page
+![https://i.imgur.com/ueP13ao.png](https://i.imgur.com/ueP13ao.png)
+
+Signup page
+![https://i.imgur.com/DkMI117.png](https://i.imgur.com/DkMI117.png)
+
+Details page
+![https://i.imgur.com/NOJezfx.png](https://i.imgur.com/NOJezfx.png)
+
+
+
 ### Built With 
 
 - HTML/CSS
