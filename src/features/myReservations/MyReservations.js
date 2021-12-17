@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getReservations } from '../../redux/api/api';
+import styles from './MyReservations.module.scss';
 
 const MyReservations = () => {
   const reservations = useSelector((state) => state.reservationsReducer.reservations);
@@ -12,21 +13,24 @@ const MyReservations = () => {
       setCalledReservations(true);
       dispatch(getReservations());
     }
-  });
+  },[]);
 
   return (
-    <>
-      {
-        reservations.map((reserve) => (
-          <div key={reserve.city}>
-            <div>
-              <h4>{reserve.city}</h4>
-              <h4>{reserve.date}</h4>
+    <div className={styles.container}>
+      <h2>MY RESERVATIONS</h2>
+      <div className={styles.cards}>
+        {
+          reservations.map((reserve) => (
+            <div key={reserve.city}>
+              <div>
+                <h4>{reserve.city}</h4>
+                <h4>{reserve.date}</h4>
+              </div>
             </div>
-          </div>
-        ))
-      }
-    </>
+          ))
+        }
+      </div>
+    </div>
   );
 };
 

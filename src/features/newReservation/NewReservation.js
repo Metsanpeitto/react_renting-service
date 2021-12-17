@@ -48,7 +48,7 @@ function NewReservation() {
       setItemId(param.itemId);
       setReceivedItemId(true);
     }
-  });
+  }, []);
 
   return (
     <div className={styles.container}>

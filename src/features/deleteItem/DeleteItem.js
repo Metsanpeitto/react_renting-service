@@ -16,7 +16,11 @@ const DeleteItem = () => {
     if (!calledItems || calledItems !== items) {
       setCalledItems(items);
     }
-  });
+  }, []);
+
+  useEffect(() => {
+    setCalledItems(items);
+  }, [items]);
 
   const submitDeleteToStore = (e) => {
     const itemId = e.currentTarget.id;

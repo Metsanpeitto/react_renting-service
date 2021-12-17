@@ -21,11 +21,17 @@ const deleteItem = async (itemId) => {
     },
   };
   axios.delete(`${url}/${itemId}`, config).then((res) => {
-    if (res.status === 201) {
-      toast.success('User deleted successfullly');
+    if (res.status === 302) {
+      toast.error('There was an error');
+      console.log(res);
       return res;
     }
-    toast.danger('There was an error');
+    if (res.status === 204) {
+      toast.success('Boat deleted successfullly');
+      console.log(res);
+      return res;
+    }
+
     return null;
   });
 };
@@ -49,13 +55,12 @@ const addItem = async (item) => {
   const response = axios.post(`${url}`, body, config)
     .then((res) => {
       if (res.status === 201) {
-        toast.success('Item added successfullly');
+        toast.success('Boat added successfullly');
         return res;
       }
       toast.danger('There was an error');
       return null;
     });
-
   return response;
 };
 

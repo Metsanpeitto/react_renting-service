@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Select from "react-select";
-import { addItem } from "../../redux/api/api";
+import { addItem, getItems } from "../../redux/api/api";
 import styles from "./NewItem.module.scss";
 
 function NewItem() {
@@ -65,6 +65,7 @@ function NewItem() {
 
     if (newItem.userId && name && description && image && price) {
       dispatch(addItem(newItem));
+      dispatch(getItems());
       navigate('/');
     }
   };
@@ -100,7 +101,7 @@ function NewItem() {
 
         <div role="button" className={styles['image-selector-block']}>
           {!image ? (
-            <div className="">
+            <div className="images-scroll">
               {' '}
               <h4>Select an image from the list:</h4>
               <div className="image-selector">

@@ -8,11 +8,6 @@
 
 .App {
   @extend %flex-row;
-
-  // .slick-list {
-  //   text-align: center;
-  // }
-
   .react-datetime-picker__wrapper {
     border: none;
 
@@ -76,4 +71,9 @@ input {
 
 button {
   cursor: pointer;
+}
+
+.images-scroll {
+  max-height: 300px;
+  overflow-y: scroll;
 }
