@@ -24,7 +24,7 @@ the app will use the deault values, that has administrator role.
 
 ### Deployed Apps
 
-[Frontend](https://friendly-hugle-cbed27.netlify.app/my_reservations)
+[Frontend](https://friendly-hugle-cbed27.netlify.app/)
 [Backend](https://frozen-dusk-66130.herokuapp.com/api-docs/index.html)
 
 =======
