@@ -1,0 +1,80 @@
+@import "./app/scss/flex";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  @extend %flex-row;
+
+  .react-datetime-picker__wrapper {
+    border: none;
+
+    option {
+      color: black;
+    }
+  }
+
+  .react-calendar {
+    & * {
+      color: black !important;
+    }
+  }
+
+  .css-1s2u09g-control,
+  .css-1pahdxg-control {
+    border: 2px solid white;
+    border-radius: 50px;
+    background-color: transparent;
+  }
+
+  .css-qc6sy-singleValue {
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.active {
+  background-color: #97bf0f;
+}
+
+.menu {
+  position: absolute;
+  top: 10px;
+}
+
+.open {
+  left: 10px;
+}
+
+.close {
+  right: 10px;
+}
+
+.img-selector-block {
+  border: 2px solid white;
+  border-radius: 25px;
+  padding: 4%;
+  width: 300px;
+}
+
+.img-selector {
+  width: 260px;
+}
+
+input {
+  &[type="submit"] {
+    cursor: pointer;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.images-scroll {
+  max-height: 300px;
+  overflow-y: scroll;
+}

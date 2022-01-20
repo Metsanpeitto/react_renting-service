@@ -1,0 +1,60 @@
+@import '../../app/scss/flex';
+
+.container {
+  @extend %flex-col;
+
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+
+  header {
+    @extend %flex-col;
+    @extend %align-center;
+
+    height: 30vh;
+
+    img {
+      width: 200px;
+      height: auto;
+    }
+  }
+
+  nav {
+    @extend %flex-col;
+
+    margin-bottom: auto;
+
+    a {
+      text-decoration: none;
+      color: black;
+      padding: 10px;
+    }
+
+    .username {
+      text-transform: uppercase;
+    }
+  }
+
+  footer {
+    @extend %flex-col;
+
+    gap: 10px;
+
+    .social {
+      @extend %flex-row;
+
+      gap: 10px;
+
+      img {
+        width: 25px;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 20vw;
+  }
+}
